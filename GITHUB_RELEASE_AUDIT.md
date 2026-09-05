@@ -37,8 +37,8 @@ Clinical identifier names such as `subject_id` and `patientunitstayid` occur onl
 
 ## Checks
 
-- Local absolute-path scan (`/Users/hezhu`, `/mnt`, drive-letter paths): PASS.
-- Credential-pattern scan (`password`, `token`, `api_key`, private-key markers, GitHub token prefix): PASS.
+- Local absolute-path scan (developer home prefixes, mount prefixes, and drive-letter paths): PASS.
+- Credential-pattern scan (common secret labels, private-key markers, and GitHub credential prefixes): PASS.
 - Prohibited data/model extension scan across tracked files: PASS.
 - Large-file scan (>1 MiB): PASS; no matches.
 - `git diff --cached --check`: PASS.
