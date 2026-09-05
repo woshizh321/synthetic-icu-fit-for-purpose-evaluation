@@ -5,7 +5,8 @@
 - Owner: `woshizh321`
 - Repository: `synthetic-icu-fit-for-purpose-evaluation`
 - URL: `https://github.com/woshizh321/synthetic-icu-fit-for-purpose-evaluation`
-- Visibility: `PRIVATE`
+- Visibility at initial push: `PRIVATE`
+- Current visibility: `PUBLIC` (changed after explicit PI authorization on 2026-09-05)
 - Branch: `main`
 - Reviewed core-code commit: `22b6ff89e57330c4fb3a989238347adee8263e66`
 
