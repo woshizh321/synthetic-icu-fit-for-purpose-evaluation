@@ -1,0 +1,6 @@
+# Core exact recovered versions; transitive versions were not fully recoverable.
+torch==2.6.0+cu124
+sdv==1.38.0
+numpy
+pandas
+scikit-learn

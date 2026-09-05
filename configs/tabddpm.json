@@ -1,0 +1,33 @@
+{
+  "generator": "TabDDPM_corrected",
+  "family": "diffusion",
+  "source_code": "src/generators/run_tabddpm.py; official yandex-research/tab-ddpm classes at commit b476257dd460b778ba09eb97f7a51d6490fa17f8",
+  "source_decision": "DEC-011, DEC-013",
+  "hyperparameters": {
+    "d_layers": [256, 256],
+    "num_timesteps": 1000,
+    "epochs": 100,
+    "batch_size": 256,
+    "optimizer": "AdamW",
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "lr_schedule": "linear anneal",
+    "ema_decay": 0.999,
+    "scheduler": "cosine",
+    "numeric_normalization": "QuantileTransformer(output_distribution='normal')"
+  },
+  "note_on_budget": "epochs=100 / num_timesteps=1000 is the FULL formal budget per DEC-013. The B1 cloud confirmatory run used a reduced 20-epoch/500-timestep smoke budget -- B2 uses the full budget for every formal seed.",
+  "density_fix_status": "RETAINED -- implementation defect fix (B1-07, QuantileTransformer replacing unbounded z-score) confirmed at full N in B1 closure (0/855,645 density cells violated). Must not be modified.",
+  "ordering_violations_status": "RETAINED AS INTRINSIC, NOT REPAIRED -- per DEC-011 and the B2 protocol's explicit prohibition on sorting/clipping/discarding/conditioning to suppress ordering violations.",
+  "device": "cuda",
+  "n_synthetic": 40745,
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+  "training_data": "mimic_generator_contract_train.parquet",
+  "training_data_sha256": "fe378a4f8a9a42f787dc0971c9c06d1de88fd1220b7a1871251230dbe0e4ea6a",
+  "id_column_dropped_before_fit": "stay_id",
+  "outcome_conditioning": false,
+  "gpu_concurrency_rule": "run serially with CTGAN when sharing a GPU",
+  "min_free_vram_gib_required": 2.163,
+  "production_sampling": "non-EMA",
+  "production_seed_extension": "Seeds 47-56 used the same frozen configuration as seeds 42-46; no collapse rescue or replacement seeds."
+}

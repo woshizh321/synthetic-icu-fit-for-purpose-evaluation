@@ -1,0 +1,13 @@
+{
+  "feature_count": 107,
+  "scaler_fit_domain": "real MIMIC-IV training set",
+  "member_sample_n": 2000,
+  "nonmember_sample_n": 2000,
+  "reference_test_sample_n": 2000,
+  "random_state": 42,
+  "membership_bootstrap_replicates": 200,
+  "exact_duplicate_dcr_threshold": 1e-12,
+  "near_duplicate_nndr_threshold": 0.1,
+  "near_duplicate_dcr_reference": "fifth percentile of real-to-real DCR",
+  "formal_privacy_guarantee": false
+}

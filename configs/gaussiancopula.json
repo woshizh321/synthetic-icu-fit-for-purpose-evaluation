@@ -1,0 +1,17 @@
+{
+  "generator": "GaussianCopulaSynthesizer",
+  "family": "statistical",
+  "library": "sdv",
+  "library_version": "1.38.0",
+  "source_decision": "DEC-013",
+  "hyperparameters": "SDV defaults (no tunable hyperparameters for this synthesizer)",
+  "default_distribution": "beta (SDV default for GaussianCopulaSynthesizer)",
+  "device": "cpu",
+  "n_synthetic": 40745,
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+  "training_data": "mimic_generator_contract_train.parquet",
+  "training_data_sha256": "fe378a4f8a9a42f787dc0971c9c06d1de88fd1220b7a1871251230dbe0e4ea6a",
+  "id_column_dropped_before_fit": "stay_id",
+  "outcome_conditioning": false,
+  "notes": "The same frozen configuration was used for all 15 seeds."
+}

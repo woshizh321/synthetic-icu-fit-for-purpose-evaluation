@@ -1,0 +1,21 @@
+{
+  "source_database": "MIMIC-IV 3.1",
+  "external_databases": ["SICdb 1.0.8", "eICU-CRD"],
+  "landmark_hours": 24,
+  "feature_window": "[0,24 h)",
+  "source_train_n": 40745,
+  "synthetic_rows_per_realization": 40745,
+  "generators": ["GaussianCopula", "CTGAN", "TabDDPM"],
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+  "attempts_per_generator": 15,
+  "bootstrap_replicates": 2000,
+  "generator_bootstrap_base_seed": 2026090101,
+  "hospital_bootstrap_base_seed": 2027091001,
+  "eicu_hospital_primary_threshold": {"n": 200, "events": 20, "non_events": 20},
+  "eicu_hospital_sensitivity_thresholds": [
+    {"n": 100, "events": 10, "non_events": 10},
+    {"n": 300, "events": 30, "non_events": 30}
+  ],
+  "primary_external_estimand": "AUROC EUL",
+  "secondary_estimand": "AUROC ITL"
+}

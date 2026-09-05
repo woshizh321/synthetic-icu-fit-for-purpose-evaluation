@@ -1,0 +1,27 @@
+{
+  "generator": "CTGANSynthesizer",
+  "family": "GAN",
+  "library": "sdv",
+  "library_version": "1.38.0",
+  "source_decision": "DEC-013",
+  "hyperparameters": {
+    "epochs": 300,
+    "batch_size": 500,
+    "generator_dim": [256, 256],
+    "discriminator_dim": [256, 256],
+    "embedding_dim": 128,
+    "generator_lr": 0.0002,
+    "discriminator_lr": 0.0002
+  },
+  "note_on_epochs": "300 is the FULL formal budget per DEC-013. The B1 cloud confirmatory run used a reduced 50-epoch smoke budget -- B2 uses the full 300-epoch budget for every formal seed.",
+  "device": "cuda",
+  "n_synthetic": 40745,
+  "seeds": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56],
+  "training_data": "mimic_generator_contract_train.parquet",
+  "training_data_sha256": "fe378a4f8a9a42f787dc0971c9c06d1de88fd1220b7a1871251230dbe0e4ea6a",
+  "id_column_dropped_before_fit": "stay_id",
+  "outcome_conditioning": false,
+  "gpu_concurrency_rule": "run serially with TabDDPM when sharing a GPU",
+  "min_free_vram_gib_required": 2.163,
+  "production_seed_extension": "Seeds 47-56 used the same frozen configuration as seeds 42-46."
+}
