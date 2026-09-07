@@ -1,0 +1,47 @@
+{
+  "comparison_absolute_tolerance": 1e-06,
+  "environment_at_expectation_freeze": {
+    "jsonschema": "4.25.1",
+    "numpy": "2.4.4",
+    "python": "3.13.13",
+    "scipy": "1.17.1"
+  },
+  "exact_match_fields": [
+    "converged",
+    "hospital_n",
+    "seed_n",
+    "cell_n",
+    "method"
+  ],
+  "expected_fit": {
+    "cell_n": 96,
+    "converged": true,
+    "generation_attempted_n": 8,
+    "generation_failure_n": 0,
+    "generator_id": "FABRICATED_GENERATOR_V1",
+    "hospital_n": 12,
+    "input_hashes": {
+      "fixture_cells.csv": "9fe128d8e5534e423d1dcae5e078b060c5e1c175c2171029b592a3964f34b9ec",
+      "fixture_reliability.json": "bfa5642e3d1ae43509299383032b77c14896fbabc8575a3c078e190757acd473",
+      "fixture_sampling_covariance.csv": "6a6dd2221c02da85ccac871e6aa228b9e616b3195bad28f1efd80e427885fa06"
+    },
+    "learner_id": "FABRICATED_LEARNER_V1",
+    "method": "CUSTOM_EXACT_GAUSSIAN_REML_KNOWN_BLOCK_V",
+    "mu_eul": 0.11977006965472754,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "reml_objective": -179.4125954806128,
+    "se_mu": 0.010343292261625206,
+    "seed_n": 8,
+    "sigma2_hospital": 0.00025830099209868043,
+    "sigma2_seed": 0.0005715490424534594,
+    "sigma2_seed_hospital": 0.0007399411929035226,
+    "source_result_sha": "c9d75b158ba251ea4dba542019a8100ae61385aaae96a0fae1ef6a888a8a9c4d",
+    "source_result_version": "FABRICATED_8_SEED_12_HOSPITAL_FIXTURE_V1",
+    "target_A_PI_lower": 0.08230972190906366,
+    "target_A_PI_upper": 0.15723041740039143,
+    "target_B_PI_lower": 0.03951112285517473,
+    "target_B_PI_upper": 0.20002901645428034,
+    "utility_estimable_n": 8
+  },
+  "fixture_expected_schema_version": "1.0.0"
+}

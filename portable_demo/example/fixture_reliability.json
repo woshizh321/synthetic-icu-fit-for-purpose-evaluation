@@ -1,0 +1,14 @@
+{
+  "fixture_provenance": {
+    "FIXTURE_CONTAINS_REAL_CLINICAL_DATA": "NO",
+    "FIXTURE_DERIVED_FROM_EMPIRICAL_HOSPITAL_ESTIMATES": "NO",
+    "FIXTURE_DERIVED_FROM_REAL_PATIENT_ROWS": "NO",
+    "FIXTURE_PUBLIC_RELEASE_SAFE": "YES"
+  },
+  "generation_attempted_n": 8,
+  "generation_failure_n": 0,
+  "generator_id": "FABRICATED_GENERATOR_V1",
+  "learner_id": "FABRICATED_LEARNER_V1",
+  "source_result_version": "FABRICATED_8_SEED_12_HOSPITAL_FIXTURE_V1",
+  "utility_estimable_n": 8
+}

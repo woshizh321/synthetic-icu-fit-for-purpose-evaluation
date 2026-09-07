@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/woshizh321/synthetic-icu-fit-for-purpose-evaluation/schema/evidence_card.schema.json",
+  "title": "Portable synthetic-data qualification evidence card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "generator_id", "learner_id",
+    "generation_attempted_n", "utility_estimable_n", "generation_failure_n",
+    "generation_failure_rate", "mu_eul", "se_mu", "sigma2_seed",
+    "sigma2_hospital", "sigma2_seed_hospital", "target_A_PI_lower",
+    "target_A_PI_upper", "target_B_PI_lower", "target_B_PI_upper",
+    "m_eq", "m_eq_status", "realization_grid", "V_het_by_m",
+    "V_pred_by_m", "G_by_m", "user_tolerance_delta",
+    "model_based_tolerance_probability_by_m", "qualification_model",
+    "qualification_boundary", "u4_calibration_boundary", "source_result_version",
+    "source_result_sha", "software_version"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "generator_id": {"type": "string", "minLength": 1},
+    "learner_id": {"type": "string", "minLength": 1},
+    "generation_attempted_n": {"type": "integer", "minimum": 1},
+    "utility_estimable_n": {"type": "integer", "minimum": 0},
+    "generation_failure_n": {"type": "integer", "minimum": 0},
+    "generation_failure_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "mu_eul": {"type": "number"},
+    "se_mu": {"type": "number", "minimum": 0},
+    "sigma2_seed": {"type": "number", "minimum": 0},
+    "sigma2_hospital": {"type": "number", "minimum": 0},
+    "sigma2_seed_hospital": {"type": "number", "minimum": 0},
+    "target_A_PI_lower": {"type": "number"},
+    "target_A_PI_upper": {"type": "number"},
+    "target_B_PI_lower": {"type": "number"},
+    "target_B_PI_upper": {"type": "number"},
+    "m_eq": {
+      "oneOf": [
+        {"type": "integer", "minimum": 1},
+        {"const": "INF"}
+      ]
+    },
+    "m_eq_status": {
+      "enum": [
+        "FINITE_POINT_ESTIMATE",
+        "NO_TRUE_HETEROGENEITY",
+        "HOSPITAL_VARIANCE_ZERO_GENERATOR_VARIANCE_POSITIVE",
+        "NO_GENERATOR_RELATED_HETEROGENEITY"
+      ]
+    },
+    "realization_grid": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1}
+    },
+    "V_het_by_m": {"$ref": "#/$defs/nonnegativeMap"},
+    "V_pred_by_m": {"$ref": "#/$defs/nonnegativeMap"},
+    "G_by_m": {"$ref": "#/$defs/probabilityMap"},
+    "user_tolerance_delta": {"type": ["number", "null"]},
+    "model_based_tolerance_probability_by_m": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/probabilityMap"}
+      ]
+    },
+    "qualification_model": {"const": "GAUSSIAN_CROSSED_RANDOM_EFFECTS_PLUGIN"},
+    "qualification_boundary": {
+      "const": "This is a Gaussian random-effects plug-in probability derived from the fitted crossed model. It is not a clinical guarantee, certification probability, or patient-benefit estimate."
+    },
+    "u4_calibration_boundary": {
+      "const": "Calibration was target and distribution dependent: unseen-hospital generator-average coverage was less stable in some interaction-dominant and t5 settings. Universal calibration was not established, and intermediate-m outputs are model-derived rather than separately calibrated."
+    },
+    "source_result_version": {"type": "string", "minLength": 1},
+    "source_result_sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "software_version": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "nonnegativeMap": {
+      "type": "object", "minProperties": 1,
+      "patternProperties": {"^[1-9][0-9]*$": {"type": "number", "minimum": 0}},
+      "additionalProperties": false
+    },
+    "probabilityMap": {
+      "type": "object", "minProperties": 1,
+      "patternProperties": {"^[1-9][0-9]*$": {"type": "number", "minimum": 0, "maximum": 1}},
+      "additionalProperties": false
+    }
+  }
+}

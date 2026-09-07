@@ -33,6 +33,9 @@ Published results were generated under frozen software/data configurations. Repr
 
 Start with [docs/ANALYSIS_WORKFLOW.md](docs/ANALYSIS_WORKFLOW.md), then review [docs/ESTIMANDS.md](docs/ESTIMANDS.md) and [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
 
+For the patient-data-free, CPU-only post-fit qualification prototype and fully
+fabricated reuse demonstration, see [README_PORTABLE.md](README_PORTABLE.md).
+
 ## Citation and license
 
 Paper DOI, repository DOI, author metadata, and ORCIDs are pending. `CITATION.cff` is therefore deferred rather than populated with guessed metadata. No license has been selected; reuse permission remains **LICENSE_REQUIRES_PI_DECISION**.
