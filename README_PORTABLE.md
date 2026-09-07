@@ -39,6 +39,13 @@ Provide a JSON object or one-row CSV summary containing the version-1 aggregate 
 mean and standard error, three variance components, existing Target-A and Target-B
 interval endpoints, and immutable source identity.
 
+Reliability counts must be finite, non-negative, integer-valued numeric inputs.
+For JSON/API input, integer-valued floating-point values such as `15.0` are accepted;
+booleans, numeric strings, fractional values, non-finite values, and negative values
+are rejected. CSV numeric columns are explicitly decoded and validated before use.
+Estimable and generation-failure counts may each be smaller than the attempted count
+without being required to form an exhaustive partition.
+
 Without a user tolerance:
 
 ```bash

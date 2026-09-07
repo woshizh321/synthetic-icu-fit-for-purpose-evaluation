@@ -47,6 +47,35 @@ def _positive_integer(name: str, value: Any) -> int:
     return result
 
 
+def validate_reliability_count(name: str, value: Any) -> int:
+    """Validate one exact, finite, nonnegative integer-valued numeric count."""
+    if isinstance(value, bool):
+        raise ValueError(f"{name} must be a finite non-negative integer-valued number")
+    if isinstance(value, int):
+        if value < 0:
+            raise ValueError(f"{name} must be a finite non-negative integer-valued number")
+        return value
+    if not isinstance(value, float):
+        raise ValueError(f"{name} must be a finite non-negative integer-valued number")
+    if not math.isfinite(value) or value < 0 or not value.is_integer():
+        raise ValueError(f"{name} must be a finite non-negative integer-valued number")
+    return int(value)
+
+
+def validate_reliability_counts(summary: dict[str, Any]) -> tuple[int, int, int, float]:
+    """Validate and normalize the complete evidence-card reliability contract."""
+    attempted = validate_reliability_count("generation_attempted_n", summary["generation_attempted_n"])
+    estimable = validate_reliability_count("utility_estimable_n", summary["utility_estimable_n"])
+    failure = validate_reliability_count("generation_failure_n", summary["generation_failure_n"])
+    if attempted == 0:
+        raise ValueError("generation_attempted_n must be greater than zero under evidence-card schema version 1")
+    if estimable > attempted:
+        raise ValueError("utility_estimable_n must not exceed generation_attempted_n")
+    if failure > attempted:
+        raise ValueError("generation_failure_n must not exceed generation_attempted_n")
+    return attempted, estimable, failure, failure / attempted
+
+
 def variance_equivalence_count(
     sigma2_seed: float,
     sigma2_hospital: float,
@@ -134,12 +163,7 @@ def model_based_tolerance_probability(
 
 
 def _counts(summary: dict[str, Any]) -> tuple[int, int, int, float]:
-    attempted = _positive_integer("generation_attempted_n", summary["generation_attempted_n"])
-    estimable = int(summary["utility_estimable_n"])
-    failure = int(summary.get("generation_failure_n", attempted - estimable))
-    if estimable < 0 or failure < 0 or estimable + failure != attempted:
-        raise ValueError("generation reliability counts are inconsistent")
-    return attempted, estimable, failure, failure / attempted
+    return validate_reliability_counts(summary)
 
 
 def qualify_summary(

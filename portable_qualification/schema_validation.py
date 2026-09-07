@@ -52,8 +52,10 @@ def validate_evidence_card(card: dict[str, Any]) -> None:
     attempted = card["generation_attempted_n"]
     estimable = card["utility_estimable_n"]
     failure = card["generation_failure_n"]
-    if estimable + failure != attempted:
-        raise ValueError("generation reliability count identity failed")
+    if estimable > attempted:
+        raise ValueError("utility_estimable_n must not exceed generation_attempted_n")
+    if failure > attempted:
+        raise ValueError("generation_failure_n must not exceed generation_attempted_n")
     if not math.isclose(card["generation_failure_rate"], failure / attempted, abs_tol=1e-12):
         raise ValueError("generation failure rate identity failed")
     grid = card["realization_grid"]

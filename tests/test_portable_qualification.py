@@ -14,6 +14,7 @@ from portable_qualification.algebra import (
     realization_quantities,
     target_a_variance,
     target_b_variance,
+    validate_reliability_count,
     variance_equivalence_count,
 )
 from portable_qualification.cli import _fit_summary
@@ -52,6 +53,18 @@ def assert_nested_close(testcase, observed, expected, tolerance):
 
 
 class AlgebraTests(unittest.TestCase):
+    def test_reliability_count_valid_numeric_inputs(self):
+        for value, expected in ((15, 15), (15.0, 15), (0, 0), (0.0, 0)):
+            with self.subTest(value=value):
+                self.assertEqual(validate_reliability_count("count", value), expected)
+
+    def test_reliability_count_invalid_inputs_fail_closed(self):
+        invalid = (15.2, -1, float("nan"), float("inf"), float("-inf"), "15", True, False, None)
+        for value in invalid:
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(ValueError, "finite non-negative integer-valued"):
+                    validate_reliability_count("generation_attempted_n", value)
+
     def test_target_bridge_and_locked_formulas(self):
         result = realization_quantities(1, 0.1, 0.2, 0.3, 0.4)
         self.assertAlmostEqual(result["V_het_m"], 0.9, delta=ALGEBRA_TOLERANCE)
@@ -144,6 +157,37 @@ class SchemaTests(unittest.TestCase):
             card, _ = qualify_summary(read_summary(path), m_max=3, delta=None)
             validate_evidence_card(card)
             self.assertEqual(card["realization_grid"], [1, 2, 3])
+
+    def test_cross_field_count_upper_bounds(self):
+        for field in ("utility_estimable_n", "generation_failure_n"):
+            invalid = copy.deepcopy(self.summary)
+            invalid["generation_attempted_n"] = 15
+            invalid[field] = 16
+            with self.subTest(field=field):
+                with self.assertRaisesRegex(ValueError, "must not exceed generation_attempted_n"):
+                    qualify_summary(invalid, m_max=3)
+
+    def test_nonpartition_counts_are_permitted(self):
+        valid = copy.deepcopy(self.summary)
+        valid["generation_attempted_n"] = 15
+        valid["utility_estimable_n"] = 10
+        valid["generation_failure_n"] = 3
+        card, _ = qualify_summary(valid, m_max=3)
+        validate_evidence_card(card)
+        self.assertEqual(card["generation_failure_rate"], 3 / 15)
+
+    def test_fabricated_fit_path_uses_strict_count_validator(self):
+        reliability = json.loads((FIXTURE / "fixture_reliability.json").read_text())
+        reliability["utility_estimable_n"] = 7.5
+        with tempfile.TemporaryDirectory() as directory:
+            invalid_path = Path(directory) / "reliability.json"
+            invalid_path.write_text(json.dumps(reliability))
+            with self.assertRaisesRegex(ValueError, "utility_estimable_n must be"):
+                _fit_summary(
+                    FIXTURE / "fixture_cells.csv",
+                    FIXTURE / "fixture_sampling_covariance.csv",
+                    invalid_path,
+                )
 
     def test_malformed_realization_maps_fail(self):
         invalid = copy.deepcopy(self.card)

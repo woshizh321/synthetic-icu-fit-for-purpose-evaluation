@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -40,7 +41,31 @@ def read_summary(path: Path) -> dict[str, Any]:
             rows = list(csv.DictReader(handle))
         if len(rows) != 1:
             raise ValueError("summary CSV must contain exactly one data row")
-        return rows[0]
+        row = rows[0]
+        count_fields = {
+            "generation_attempted_n", "utility_estimable_n", "generation_failure_n"
+        }
+        numeric_fields = {
+            "mu_eul", "se_mu", "sigma2_seed", "sigma2_hospital",
+            "sigma2_seed_hospital", "target_A_PI_lower", "target_A_PI_upper",
+            "target_B_PI_lower", "target_B_PI_upper",
+        }
+        for field in count_fields:
+            raw = row.get(field)
+            try:
+                numeric = float(raw)
+            except (TypeError, ValueError) as exc:
+                raise ValueError(f"{field} must be a finite non-negative integer-valued number") from exc
+            if not math.isfinite(numeric) or numeric < 0 or not numeric.is_integer():
+                raise ValueError(f"{field} must be a finite non-negative integer-valued number")
+            row[field] = int(numeric)
+        for field in numeric_fields:
+            if field in row:
+                try:
+                    row[field] = float(row[field])
+                except (TypeError, ValueError) as exc:
+                    raise ValueError(f"{field} must be numeric in summary CSV") from exc
+        return row
     raise ValueError("summary must be a .json or .csv file")
 
 

@@ -7,7 +7,7 @@ import math
 import sys
 from pathlib import Path
 
-from .algebra import qualify_summary
+from .algebra import qualify_summary, validate_reliability_counts
 from .constants import (
     INTERMEDIATE_M_BOUNDARY,
     M_EQ_BOUNDARY,
@@ -31,6 +31,7 @@ from .schema_validation import validate_evidence_card
 
 def _fit_summary(cells_path: Path, covariance_path: Path, reliability_path: Path) -> dict:
     reliability = read_json(reliability_path)
+    attempted, estimable, failure, _ = validate_reliability_counts(reliability)
     fitted = fit_crossed_reml(read_cells(cells_path), read_covariance(covariance_path))
     if not fitted["converged"]:
         raise RuntimeError(f"crossed REML did not converge: {fitted['optimizer_message']}")
@@ -46,9 +47,9 @@ def _fit_summary(cells_path: Path, covariance_path: Path, reliability_path: Path
         **fitted,
         "generator_id": str(reliability["generator_id"]),
         "learner_id": str(reliability["learner_id"]),
-        "generation_attempted_n": int(reliability["generation_attempted_n"]),
-        "utility_estimable_n": int(reliability["utility_estimable_n"]),
-        "generation_failure_n": int(reliability["generation_failure_n"]),
+        "generation_attempted_n": attempted,
+        "utility_estimable_n": estimable,
+        "generation_failure_n": failure,
         "target_A_PI_lower": mean - 1.96 * target_a_scale,
         "target_A_PI_upper": mean + 1.96 * target_a_scale,
         "target_B_PI_lower": mean - 1.96 * target_b_scale,

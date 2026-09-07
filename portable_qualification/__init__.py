@@ -6,6 +6,8 @@ from .algebra import (
     realization_quantities,
     target_a_variance,
     target_b_variance,
+    validate_reliability_count,
+    validate_reliability_counts,
     variance_equivalence_count,
 )
 from .constants import (
@@ -23,5 +25,7 @@ __all__ = [
     "realization_quantities",
     "target_a_variance",
     "target_b_variance",
+    "validate_reliability_count",
+    "validate_reliability_counts",
     "variance_equivalence_count",
 ]
