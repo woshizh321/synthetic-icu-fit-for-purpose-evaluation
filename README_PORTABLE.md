@@ -142,8 +142,7 @@ The fixture is fabricated rather than deidentified. It contains no real clinical
 data, patient rows, empirical hospital estimates, or clinical site identifiers.
 The portable workflow is CPU-only and imports no GPU framework.
 
-The software license decision is pending PI determination. The code is publicly
-accessible, but no reuse license or “open source” status is implied.
+The original portable software and accompanying documentation are available under the MIT License (see LICENSE). Third-party dependencies retain their own licenses. Source clinical databases and restricted patient-derived data are not covered by this software license.
 
 ## Technical tests
 

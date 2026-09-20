@@ -10,7 +10,7 @@ The generation-reliability denominator contains all 45 attempts. Utility analyse
 
 ## Data are not included
 
-No row-level clinical data or synthetic datasets are included in this repository. MIMIC-IV, SICdb, and eICU-CRD must be obtained independently under their applicable access terms. Synthetic datasets are intended for separate PhysioNet distribution: **[PhysioNet DOI to be added after deposition]**.
+No row-level clinical data or synthetic datasets are included in this repository. MIMIC-IV, SICdb, and eICU-CRD must be obtained independently under their applicable access terms. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are archived at https://doi.org/10.5281/zenodo.22822482.
 
 See [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before running any source-data step.
 
@@ -38,4 +38,4 @@ fabricated reuse demonstration, see [README_PORTABLE.md](README_PORTABLE.md).
 
 ## Citation and license
 
-Paper DOI, repository DOI, author metadata, and ORCIDs are pending. `CITATION.cff` is therefore deferred rather than populated with guessed metadata. No license has been selected; reuse permission remains **LICENSE_REQUIRES_PI_DECISION**.
+Original software and accompanying documentation in this repository are licensed under the MIT License; see LICENSE. Third-party dependencies retain their own licenses and are not relicensed by this repository. This software license grants no rights to MIMIC-IV, SICdb, eICU-CRD, or restricted patient-derived data. The separate Zenodo materials retain the terms stated in that archive. The manuscript DOI is not yet assigned.

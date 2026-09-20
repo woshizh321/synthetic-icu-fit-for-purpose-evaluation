@@ -2,7 +2,7 @@
 
 This is a code-only repository. It does not redistribute MIMIC-IV, SICdb, eICU-CRD, synthetic datasets, participant-level predictions, or fitted models.
 
-Researchers must obtain each source database independently and comply with its current credentialing, data-use, and citation requirements. Nothing in this repository bypasses those controls. The 45 synthetic row-level datasets are planned for separate PhysioNet deposition under applicable access conditions; the DOI is pending.
+Researchers must obtain each source database independently and comply with its current credentialing, data-use, and citation requirements. Nothing in this repository bypasses those controls. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are available at https://doi.org/10.5281/zenodo.22822482. The MIT software license does not grant access to or reuse rights over the source databases or restricted patient-derived datasets.
 
 The source scripts accept local locations through environment variables:
 
