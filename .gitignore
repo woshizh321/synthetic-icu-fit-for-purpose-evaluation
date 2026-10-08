@@ -23,7 +23,7 @@ raw/
 derived/
 outputs/
 checkpoints/
-models/
+/models/
 cache/
 tmp/
 .pytest_cache/
@@ -31,3 +31,8 @@ tmp/
 venv/
 env/
 environments/
+
+predictions/
+restricted_outputs/
+credentials/
+private_configs/

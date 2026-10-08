@@ -1,35 +1,20 @@
-# Reproducibility and software environment
+# Accepted reproducibility boundaries
 
-Two production environments were used and are recorded separately.
+This corrected release supports inspectable computational modules, approved aggregate publication outputs and fabricated demonstrations. It does not promise numerical reconstruction of the complete historical clinical pipeline from independently obtained raw data and public code alone.
 
-## Generator environment (exact recovered core)
+| Scope | Evidence and limit |
+|---|---|
+| Historical MIMIC membership | Internally verified 40,745/10,187 partition; exact replay requires restricted historical assets. |
+| Canonical eICU to frozen analytical inputs | Verified 104,322 admissions, 6,391 mortality-proxy events, 208 hospitals, exact 85-hospital primary membership, 10,953,810 primary feature cells and membership/labels/pairing in 90 prediction files. |
+| Raw eICU CSV to canonical master | Not independently verified. |
+| Historical D-09 executed source | Unresolved; this release does not claim its recovery. |
+| Computational modules | Authenticated prediction functions and empirical scientific body, IO adaptations and inspected reference modules are distinguished in CODE_PROVENANCE.md and PROVENANCE.json. |
+| Public aggregates | Approved 05S publication projections and source quantities; retained fields are unchanged. |
+| Fabricated integration | Invented records and supplied probabilities/Target-B intervals; no clinical training or inference. |
+| Source-level orchestration | Not authenticated as a complete historically executed pipeline. |
 
-- Python 3.11.15
-- PyTorch 2.6.0+cu124
-- CUDA runtime reported by PyTorch: 12.4
-- SDV 1.38.0
-- TabDDPM upstream commit: `b476257dd460b778ba09eb97f7a51d6490fa17f8`
+Accepted qualifications do not establish that the frozen analytical inputs are incorrect. They do limit reproducibility claims. No clinical generators, models, predictions, crossed inference or scientific simulations were rerun for this release. The unmet 2/4 robustness criterion and empirical discordance findings are preserved.
 
-Hardware and host names are not required scientific inputs and are omitted. Versions of transitive packages not present in the frozen runtime records are unavailable rather than inferred.
+## Current release verification
 
-## Prediction environment (exact recovered)
-
-- Python 3.14.4
-- NumPy 2.5.2
-- pandas 3.0.5
-- scikit-learn 1.9.0
-- XGBoost 3.4.0
-- PyArrow 25.0.1
-
-## Fidelity/calibration and cohort records
-
-The fidelity/privacy runtime recorded Python 3.14.4, NumPy 2.4.4, pandas 3.0.2, SciPy 1.17.1, scikit-learn 1.8.0, and Matplotlib 3.10.9. The eICU endpoint feasibility runtime recorded DuckDB 1.5.3 and PyArrow 24.0.0. These differences are historical facts; no single invented lock file is presented as the environment for every stage.
-
-## Boundaries
-
-- The source database releases and local source infrastructure are external dependencies.
-- Historical fitted objects and patient-level predictions are excluded.
-- Exact GPU execution can depend on platform-specific numerical behavior.
-- All 45 attempts belong to reliability; conditional utility uses the 42 estimable datasets.
-- Empirical attacks are attack-specific diagnostics and do not provide formal privacy accounting.
-- Syntax and fabricated-data unit tests do not validate source-data access or reproduce manuscript numbers.
+The complete public suite is run in a fresh installed environment and then from a fresh clone of the candidate commit. Exact counts, environment identity and limitations are recorded in the release audit. Earlier component-only counts are historical evidence and are not substituted for this run.

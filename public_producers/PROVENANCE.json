@@ -1,0 +1,34 @@
+[
+  {
+    "stage": "prediction writer / frozen learners",
+    "source": "scripts/postreview_upgrade/u1_bcd2_expanded_utility/02_produce_predictions.py",
+    "historical_sha256": "04890e16a9d294226eef46286fdb5cf5146aa1702bbf888196f25b958802f761",
+    "public_file": "public_producers/prediction.py",
+    "adaptation": "Exact function definitions + output-configuration interface; no fitting executed",
+    "public_sha256": "aba813b365a8ae68210e56e3f22d56a92decbbd0b4efa5578910f1be2a073217"
+  },
+  {
+    "stage": "hospital EUL",
+    "source": "scripts/postlock_upgrade/final_estimand_stochasticity_v1/u2_hospital.py",
+    "historical_sha256": "22052a58d0ea7e1af6d8128cf6d3ecbb56cbc4d4bebca784aff26f4a269904bf",
+    "public_file": "public_producers/hospital.py",
+    "adaptation": "Exact point AUROC/EUL statements; registry IO/identity/schema validation and evaluation-row sort/reset-index adaptation. Bootstrap/REML not run.",
+    "public_sha256": "a8708658d94c16ec86427d3807c3f36d69c0b3fd7a1eade08366d28d992bcd11"
+  },
+  {
+    "stage": "current empirical decisions/discordance/reversals/Target-B",
+    "source": "NC_PRESUB_INTEGRITY_02/11_U6_02_REFRESH/post_u6_01/executed_matrix_algorithm.py",
+    "historical_sha256": "877f385e9ab2f910ff7bb1332f714562099e45633c54e13652f31ed7faf2fdf7",
+    "public_file": "public_producers/empirical.py",
+    "adaptation": "Exact current scientific matrix body; caller IO and schema validation only",
+    "public_sha256": "b15fe428d24f7af376bcb46df16ad529ae08e172b49de5fb5fd955b28e6b704e"
+  },
+  {
+    "stage": "empirical oracle",
+    "source": "NC_PRESUB_INTEGRITY_02/11_U6_02_REFRESH/post_u6_01/executed_matrix_algorithm.py",
+    "historical_sha256": "877f385e9ab2f910ff7bb1332f714562099e45633c54e13652f31ed7faf2fdf7",
+    "public_file": "public_producers/golden/executed_matrix_algorithm.py",
+    "adaptation": "Byte-identical executed block, no identifiers",
+    "public_sha256": "877f385e9ab2f910ff7bb1332f714562099e45633c54e13652f31ed7faf2fdf7"
+  }
+]

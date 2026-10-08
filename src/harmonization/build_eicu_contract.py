@@ -6,12 +6,27 @@ stable record IDs (labid/vitalperiodicid/vitalaperiodicid), never nested-array o
 import duckdb
 import os
 import time
+from pathlib import Path
 
 MASTER = os.environ["EICU_MASTER_PARQUET"]
 WORK_ROOT = os.environ.get("ICU_WORK_ROOT", "outputs")
 DB = os.path.join(WORK_ROOT, "preflight2d", "eicu_work.duckdb")
-OUTPUT_PARQUET = os.path.join(WORK_ROOT, "preflight2d", "eicu_replication_contract.parquet")
+OUTPUT_PARQUET = os.environ.get("EICU_OUTPUT_PARQUET", os.path.join(WORK_ROOT, "preflight2d", "eicu_replication_contract.parquet"))
 
+
+def export_contract(con, output_path):
+    """Export the existing table only; keep analytical construction unchanged."""
+    if not str(output_path).strip() or any(c in str(output_path) for c in "{}\x00"):
+        raise ValueError("Output path must be explicit and contain no unresolved placeholders")
+    path = Path(output_path).expanduser()
+    if path.exists() and path.is_dir():
+        raise ValueError("Output path is a directory")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    con.table("eicu_contract_raw").write_parquet(str(path))
+    return path
+
+
+Path(DB).parent.mkdir(parents=True, exist_ok=True)
 t0 = time.time()
 con = duckdb.connect(DB)
 con.execute("PRAGMA threads=8")
@@ -214,7 +229,5 @@ FROM {join_sql}
 n_final = con.execute("SELECT COUNT(*) FROM eicu_contract_raw").fetchone()[0]
 print(f"eicu_contract_raw N={n_final} ({time.time()-t0:.1f}s)")
 
-con.execute("""
-COPY eicu_contract_raw TO '{OUTPUT_PARQUET}' (FORMAT PARQUET)
-""")
+export_contract(con, OUTPUT_PARQUET)
 print(f"DONE ({time.time()-t0:.1f}s)")

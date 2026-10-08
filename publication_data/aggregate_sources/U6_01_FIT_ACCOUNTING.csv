@@ -1,0 +1,241 @@
+template_id,generator,learner,regime,method,target,attempted_fits,successful_fits,failed_fits,invalid_interval_count,state_estimable_n,failure_rate,failure_reasons,common_success_with_M1,common_success_all_methods
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M1,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M1,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M2,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",997,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M2,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",997,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],998,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",995,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",995,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,995
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",996,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",996,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M1,TARGET_B,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M1,TARGET_A,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M2,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M2,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],1000,997
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M1,TARGET_B,1000,990,10,0,990,0.01,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 10}]",990,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M1,TARGET_A,1000,990,10,0,990,0.01,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 10}]",990,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",985,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",985,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],990,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],990,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],990,985
+GaussianCopula__LR_L2,GaussianCopula,LR_L2,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],990,985
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M1,TARGET_B,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M1,TARGET_A,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M2,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",993,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M2,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",993,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],994,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",993,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",993,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,993
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",996,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",996,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],999,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M1,TARGET_B,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M1,TARGET_A,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],1000,996
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M1,TARGET_B,1000,991,9,0,991,0.0089999999999999993,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 9}]",991,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M1,TARGET_A,1000,991,9,0,991,0.0089999999999999993,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 9}]",991,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",986,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",986,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],991,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],991,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],991,986
+GaussianCopula__XGBoost,GaussianCopula,XGBoost,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],991,986
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M1,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M1,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",993,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",993,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],998,993
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",989,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",989,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],994,989
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",995,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",995,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],999,995
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M1,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M1,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M2,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",993,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M2,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",993,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],995,993
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M2,TARGET_B,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",989,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M2,TARGET_A,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",989,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,989
+CTGAN__LR_L2,CTGAN,LR_L2,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,989
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M2,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",995,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M2,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",995,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",991,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",991,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],995,991
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",995,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",995,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,995
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M2,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",994,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M2,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",994,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,994
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M2,TARGET_B,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",990,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M2,TARGET_A,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",990,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,990
+CTGAN__XGBoost,CTGAN,XGBoost,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,990
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",991,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",991,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",992,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",992,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,992
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",991,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",991,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,991
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M1,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M1,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M2,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",994,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M2,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",994,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M1,TARGET_B,1000,992,8,0,992,0.0080000000000000002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 8}]",992,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M1,TARGET_A,1000,992,8,0,992,0.0080000000000000002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 8}]",992,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M2,TARGET_B,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",985,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M2,TARGET_A,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",985,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],992,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],992,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],992,985
+TabDDPM__LR_L2,TabDDPM,LR_L2,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],992,985
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M1,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M1,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M2,TARGET_B,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",994,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M2,TARGET_A,1000,997,3,0,997,0.0030000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 3}]",994,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R1_SEED_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],997,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_B,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M1,TARGET_A,1000,998,2,0,998,0.002,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 2}]",998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_B,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",991,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M2,TARGET_A,1000,993,7,0,993,0.0070000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 7}]",991,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R2_HOSPITAL_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],998,991
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M1,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",992,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",992,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_B,1000,1000,0,0,1000,0,[],996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M3,TARGET_A,1000,1000,0,0,1000,0,[],996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_B,1000,1000,0,0,1000,0,[],996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R3_INTERACTION_DOMINANT,M4,TARGET_A,1000,1000,0,0,1000,0,[],996,992
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M1,TARGET_B,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M1,TARGET_A,1000,995,5,0,995,0.0050000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 5}]",995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M2,TARGET_B,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",994,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M2,TARGET_A,1000,999,1,0,999,0.001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 1}]",994,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M3,TARGET_B,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M3,TARGET_A,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M4,TARGET_B,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R4_MIXED,M4,TARGET_A,1000,1000,0,0,1000,0,[],995,994
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M1,TARGET_B,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M1,TARGET_A,1000,994,6,0,994,0.0060000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 6}]",994,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M2,TARGET_B,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",990,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M2,TARGET_A,1000,996,4,0,996,0.0040000000000000001,"[{""error_type"": ""RuntimeError"", ""error_message"": ""optimizer nonconvergence: ABNORMAL: "", ""count"": 4}]",990,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M3,TARGET_B,1000,1000,0,0,1000,0,[],994,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M3,TARGET_A,1000,1000,0,0,1000,0,[],994,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M4,TARGET_B,1000,1000,0,0,1000,0,[],994,990
+TabDDPM__XGBoost,TabDDPM,XGBoost,R5_NULL,M4,TARGET_A,1000,1000,0,0,1000,0,[],994,990

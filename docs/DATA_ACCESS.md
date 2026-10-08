@@ -1,18 +1,7 @@
-# Data access
+# Data access and publication scope
 
-This is a code-only repository. It does not redistribute MIMIC-IV, SICdb, eICU-CRD, synthetic datasets, participant-level predictions, or fitted models.
+Clinical method reexecution requires independent authorization for MIMIC-IV v3.1, SICdb v1.0.8 and eICU-CRD v2.0. Public software provides no credentialed-source access or redistribution rights.
 
-Researchers must obtain each source database independently and comply with its current credentialing, data-use, and citation requirements. Nothing in this repository bypasses those controls. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are available at https://doi.org/10.5281/zenodo.22822482. The MIT software license does not grant access to or reuse rights over the source databases or restricted patient-derived datasets.
+Historical MIMIC membership is internally verified; exact replay requires restricted historical ordering/membership assets. The eICU canonical master-to-analysis matrix and prediction pairing are independently verified within that scope. Raw CSV-to-canonical transformation was not independently verified; historical D-09 executed-source provenance remains unresolved.
 
-The source scripts accept local locations through environment variables:
-
-```bash
-export MIMIC_HOSP_ROOT=/path/to/mimic/hosp
-export MIMIC_ICU_ROOT=/path/to/mimic/icu
-export SICDB_ROOT=/path/to/sicdb
-export EICU_MASTER_PARQUET=/path/to/authorized/eicu/master_icu_stay.parquet
-export ICU_PROJECT_ROOT=/path/to/this/repository
-export ICU_WORK_ROOT=/path/to/derived/workspace
-```
-
-`EICU_MASTER_PARQUET` refers to the study’s canonical, locally constructed nested-event asset. Its row-level builder is not distributed here because it belongs to separately governed source-data infrastructure. This is a documented reproduction dependency, not an included dataset.
+The publication_data directory contains only the approved 05S non-identifying aggregate research outputs and supplementary workbooks. Approval is specific to these reviewed publication projections and does not authorize arbitrary aggregate or derivative data sharing. Clinical records, source hospital identifiers, hospital-indexed records/nested JSON, evaluated row-level synthetic data, trained clinical models and restricted split/bootstrap assets are excluded. Underlying credentialed sources retain their terms; MIT applies to original software, not clinical data.

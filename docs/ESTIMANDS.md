@@ -1,3 +1,5 @@
+> Frozen method description retained unchanged. No estimator or scientific result is recalculated by this repair. This document does not establish complete producer authority or exact public raw-source replay.
+
 # Estimands and metric direction
 
 For a performance metric where larger values are preferable:

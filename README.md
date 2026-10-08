@@ -1,41 +1,22 @@
-# Stochasticity-aware multicenter evaluation of synthetic tabular ICU data
+# Task-specific synthetic-data suitability across clinical destinations
 
-This repository contains the reproducible analysis code for evaluating generation reliability, representation fidelity, predictive utility, stochastic variability, multicenter heterogeneity, and empirical privacy of synthetic tabular ICU data.
+Corrected, scope-limited public research software and aggregate publication data. Read [reproducibility boundaries](docs/REPRODUCIBILITY.md), [code provenance](docs/CODE_PROVENANCE.md) and [data access](docs/DATA_ACCESS.md) before interpreting any reproducibility claim.
 
-## Study architecture
+## Install and test
 
-MIMIC-IV is the source database for model training and held-out internal evaluation. SICdb is an independent external evaluation database, and eICU-CRD provides multicenter external evaluation. Three generators (GaussianCopula, CTGAN, and TabDDPM) were evaluated across 15 prespecified seeds (42–56), with logistic regression and XGBoost as downstream learners. AUROC external utility loss (EUL) is the primary external estimand; transport interaction (ITL) is secondary. The multicenter analysis uses crossed seed and hospital effects with seed×hospital interaction and full within-hospital seed covariance.
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements-public.txt
+.venv/bin/python -m pytest -q tests
+.venv/bin/python -m public_producers.fixture --output /tmp/icu-invented-demo-new-directory
+```
 
-The generation-reliability denominator contains all 45 attempts. Utility analyses are conditional on estimability: 15 GaussianCopula, 15 CTGAN, and 12 TabDDPM realizations. The three single-class TabDDPM collapses remain reliability outcomes and are not replaced or repaired.
+The fixture uses invented records, supplied probabilities and supplied Target-B intervals, covering three generator labels, two learners, 85 invented destinations and four tolerances. It trains no clinical model and refits no clinical crossed model. Working fixture identifiers are invented. Its public aggregate outputs test software, not original clinical preprocessing.
 
-## Data are not included
+## Included materials
 
-No row-level clinical data or synthetic datasets are included in this repository. MIMIC-IV, SICdb, and eICU-CRD must be obtained independently under their applicable access terms. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are archived at https://doi.org/10.5281/zenodo.22822482.
+Publication data contain only approved 05S aggregate projections and supplementary workbooks. Tests verify frozen aggregate source identity, decision/discordance computations on fabricated data, restricted-field rejection, the corrected TabDDPM 16,000-update linear optimizer schedule separately from cosine diffusion, and eICU export-path handling. Clinical generation modules remain inspectable but are not executed by this demonstration; their optional dependencies are separate.
 
-See [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before running any source-data step.
+Historical MIMIC membership is internally verified but exact public raw-source replay is not established. Canonical eICU-to-analytical input equivalence is verified; original raw CSV-to-canonical conversion is not independently verified and historical D-09 executed source remains unresolved. Reference and publication-interface code must not be called authenticated original source.
 
-## Repository map
-
-- `configs/`: frozen study, generator, learner, bootstrap, hospital, and privacy settings.
-- `src/cohort/`: MIMIC-IV cohort and source-window extraction.
-- `src/harmonization/`: MIMIC-IV/SICdb static representation, training contract, and corrected eICU-CRD contract.
-- `src/generators/`: authoritative SDV and non-EMA TabDDPM generation scripts.
-- `src/models/`: exact learner kernels.
-- `src/estimands/` and `src/bootstrap/`: utility metrics, calibration, and hierarchical inference.
-- `src/multicenter/`: outcome-independent domain distance and full-covariance crossed-effects REML.
-- `src/fidelity/`, `src/measurement_process/`, and `src/privacy/`: separate qualification-domain kernels.
-- `src/reporting/`: editable Figure 1 generation.
-- `tests/`: fabricated-data unit tests only.
-
-## Reproduction boundary
-
-Published results were generated under frozen software/data configurations. Reproduction requires access to the same source database releases and compatible software versions. The repository documents exact recovered versions where available, but does not promise bit-for-bit identity across platforms. Patient-level prediction files, fitted models, checkpoints, bootstrap indices, and aggregate manuscript outputs are deliberately excluded.
-
-Start with [docs/ANALYSIS_WORKFLOW.md](docs/ANALYSIS_WORKFLOW.md), then review [docs/ESTIMANDS.md](docs/ESTIMANDS.md) and [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
-
-For the patient-data-free, CPU-only post-fit qualification prototype and fully
-fabricated reuse demonstration, see [README_PORTABLE.md](README_PORTABLE.md).
-
-## Citation and license
-
-Original software and accompanying documentation in this repository are licensed under the MIT License; see LICENSE. Third-party dependencies retain their own licenses and are not relicensed by this repository. This software license grants no rights to MIMIC-IV, SICdb, eICU-CRD, or restricted patient-derived data. The separate Zenodo materials retain the terms stated in that archive. The manuscript DOI is not yet assigned.
+Clinical databases require independent source authorization. No patient-level clinical records/predictions, evaluated row-level synthetic data, fitted clinical models/checkpoints, source hospital identifiers, hospital-indexed outputs, private maps, restricted bootstrap or historical split assets are distributed. MIT software licensing grants no clinical-data access rights. Published summary research findings retain their release-specific attribution and source governance.
