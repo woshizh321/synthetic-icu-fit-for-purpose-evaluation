@@ -1,0 +1,17 @@
+{
+  "mode": "PUBLIC_AGGREGATE_AND_FABRICATED_REPRODUCTION",
+  "fixture_is_fabricated": true,
+  "trained_models": 0,
+  "clinical_records_used": 0,
+  "registry_rows": 90,
+  "hospital_cells": 7480,
+  "matrix_rows": 24,
+  "public_objects": [
+    "DESTINATION_DISCORDANCE",
+    "EMPIRICAL_DENOMINATORS",
+    "EMPIRICAL_MATRIX_SUMMARY",
+    "REALIZATION_DISCORDANCE",
+    "TARGET_B_REFERENCE"
+  ],
+  "historical_clinical_reconstruction_proved": false
+}
