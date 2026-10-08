@@ -1,7 +1,8 @@
 """CPU-only full-covariance crossed REML for the fabricated public demo.
 
-The likelihood and optimizer settings match the existing public crossed-model
-implementation. This module accepts only aggregate seed-by-hospital cells and
+The likelihood, starts, bounds and stopping settings match the existing public
+crossed-model implementation. Centered three-point numerical differentiation
+reduces cancellation in the fabricated fixture likelihood gradient. This module accepts only aggregate seed-by-hospital cells and
 known within-hospital covariance blocks.
 """
 from __future__ import annotations
@@ -121,6 +122,7 @@ def fit_crossed_reml(
             objective,
             start,
             method="L-BFGS-B",
+            jac="3-point",
             bounds=[(-27.63, 0)] * 3,
             options={"maxiter": 300, "ftol": 1e-11},
         )

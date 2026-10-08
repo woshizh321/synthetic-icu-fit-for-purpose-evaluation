@@ -15,7 +15,7 @@ def instrumented(fun,x0,*a,**kw):
     result=original(fun,x0,*a,**kw)
     steps=[1e-4,1e-5,1e-6,1e-7,1e-8]
     gradients={str(h):[(fun(result.x+np.eye(3)[i]*h)-fun(result.x-np.eye(3)[i]*h))/(2*h) for i in range(3)] for h in steps}
-    trace.append({'start':x0.tolist(),'theta':result.x.tolist(),'objective':float(result.fun),'jac_solver':result.jac.tolist(),'success':bool(result.success),'message':str(result.message),'nit':int(result.nit),'nfev':int(result.nfev),'central_gradients_by_step':gradients})
+    trace.append({'gradient_method':kw.get('jac'), 'optimizer_options':kw.get('options'), 'start':x0.tolist(),'theta':result.x.tolist(),'objective':float(result.fun),'jac_solver':result.jac.tolist(),'success':bool(result.success),'message':str(result.message),'nit':int(result.nit),'nfev':int(result.nfev),'central_gradients_by_step':gradients})
     return result
 crossed_reml.minimize=instrumented
 fixture=root/'portable_demo/example'

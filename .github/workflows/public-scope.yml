@@ -3,6 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   public-tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        repeat: [1, 2]
     env:
       OPENBLAS_NUM_THREADS: "1"
       OMP_NUM_THREADS: "1"
@@ -13,12 +16,30 @@ jobs:
         with:
           python-version: '3.14.4'
       - run: python -m pip install -r requirements-public.txt
+      - run: python -m pytest -q tests/test_portable_qualification.py::FabricatedFixtureTests::test_end_to_end_qualification_reproduction --junitxml=isolated-test.xml
       - run: python -m pytest -q tests --junitxml=public-tests.xml
+      - run: |
+          python -m pip freeze > public-environment.txt
+          python numerical_qc/reproduce.py --repo . --output corrected-numeric.json
       - run: python -m public_producers.fixture --output "$RUNNER_TEMP/fabricated-integration"
+      - run: |
+          python - <<'PYQC'
+          from pathlib import Path
+          import os
+          observed=Path(os.environ["RUNNER_TEMP"])/"fabricated-integration/public_aggregates"
+          expected=Path("fabricated_expected")
+          files=list(observed.glob("*.csv"))
+          assert len(files)==5
+          assert all(p.read_bytes()==(expected/p.name).read_bytes() for p in files)
+          print("Five invented aggregate CSVs byte-identical to expected")
+          PYQC
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: public-scope-evidence
+          name: public-scope-evidence-${{ matrix.repeat }}
           path: |
             public-tests.xml
+            isolated-test.xml
+            public-environment.txt
+            corrected-numeric.json
             ${{ runner.temp }}/fabricated-integration/FIXTURE_QC.json
