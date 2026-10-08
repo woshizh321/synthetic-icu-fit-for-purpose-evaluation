@@ -1,5 +1,8 @@
 name: Fabricated numerical diagnosis
-on: [workflow_dispatch]
+on:
+  push:
+    branches: [nc-presub-05n-numeric-qc]
+  workflow_dispatch:
 jobs:
   diagnosis:
     runs-on: ubuntu-latest
