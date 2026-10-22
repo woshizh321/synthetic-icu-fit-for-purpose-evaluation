@@ -1,0 +1,29 @@
+{
+  "master_seed": 20261020,
+  "deltas": [
+    0.025,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "confidence_grid": [
+    0.8,
+    0.9,
+    0.95,
+    0.975,
+    0.99
+  ],
+  "dgps": {
+    "G": "Gaussian",
+    "T": "standardized t5",
+    "S": "standardized skew-normal alpha=5"
+  },
+  "templates": 6,
+  "non_null_regimes": 4,
+  "replicates_per_cell": 1000,
+  "primary_target": "B",
+  "primary_hospital_population": "H200",
+  "primary_policy": "P95",
+  "failure_is_not_indeterminate": true,
+  "failed_seed_replacement": false
+}

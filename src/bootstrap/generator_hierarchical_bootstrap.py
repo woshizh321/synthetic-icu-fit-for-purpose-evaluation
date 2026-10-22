@@ -11,12 +11,12 @@ import pandas as pd
 from sklearn.metrics import average_precision_score, roc_auc_score
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "outputs/postlock_upgrade/final_estimand_stochasticity_v1"
+OUT = ROOT / "outputs/utility_evaluation"
 EST = OUT / "estimands"
 BOOT = OUT / "generator_bootstrap"
 QC = OUT / "qc"
-REG = ROOT / "outputs/postreview_upgrade/u1_bcd2_expanded_utility/manifests/prediction_registry.csv"
-U1F = ROOT / "outputs/postreview_upgrade/u1f_multidimensional_utility/performance/u1f_complete_performance_grid.csv"
+REG = ROOT / "authorized_inputs/predictive_utility/manifests/prediction_registry.csv"
+U1F = ROOT / "outputs/multidimensional_utility/performance/multidimensional_performance_grid.csv"
 B = 2000
 BASE_SEED = 2026090101
 GENERATORS = ["GaussianCopula", "CTGAN", "TabDDPM"]

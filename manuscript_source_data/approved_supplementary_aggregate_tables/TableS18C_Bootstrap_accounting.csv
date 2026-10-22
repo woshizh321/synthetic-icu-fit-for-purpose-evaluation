@@ -1,0 +1,7 @@
+template_id,attempted_n,successful_n,failed_n,failure_rate,estimation_instability
+CTGAN__LR_L2,1000,1000,0,0.0,False
+CTGAN__XGBoost,1000,999,1,0.001,False
+GaussianCopula__LR_L2,1000,1000,0,0.0,False
+GaussianCopula__XGBoost,1000,996,4,0.004,False
+TabDDPM__LR_L2,1000,996,4,0.004,False
+TabDDPM__XGBoost,1000,999,1,0.001,False

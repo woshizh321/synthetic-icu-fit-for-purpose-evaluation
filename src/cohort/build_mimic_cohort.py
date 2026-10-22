@@ -18,7 +18,7 @@ np.random.seed(42)
 
 HOSP = os.environ["MIMIC_HOSP_ROOT"]
 ICU = os.environ["MIMIC_ICU_ROOT"]
-OUT = os.path.join(os.environ.get("ICU_WORK_ROOT", "outputs"), "preflight1")
+OUT = os.path.join(os.environ.get("ICU_WORK_ROOT", "outputs"), "cohort")
 STG = f"{OUT}/staging"
 os.makedirs(STG, exist_ok=True)
 

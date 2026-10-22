@@ -1,6 +1,6 @@
 """PREFLIGHT-2B2 formal run script for GaussianCopula and CTGAN (SDV library).
 
-Produces a complete run directory per docs/preflight2b2/PREFLIGHT2B2_PROTOCOL.md #10:
+Produces a complete run directory per the fixed generation interface:
 config.json, environment.txt, git_commit.txt, training_data_hash.txt, training.log,
 resource_preflight.json, checkpoint_not_applicable, synthetic_contract.parquet,
 synthetic_restored.parquet, synthetic_manifest.json, run_integrity_qc.json, RUN_STATUS.

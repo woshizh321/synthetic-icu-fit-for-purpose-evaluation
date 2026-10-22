@@ -1,0 +1,3 @@
+frozen_variable,eicu_source_table,eicu_source_field_or_label,eicu_offset_field,eicu_unit,eicu_conversion,eicu_source_priority
+age,patient,age,n/a (static),years,Numeric age; top-coded >89 represented as 90,primary=90 for top-code
+sex,patient,gender,n/a (static),n/a,"'Male'->1, else 0 (renamed to sex_male)",single source

@@ -11,8 +11,8 @@ from scipy.special import expit, logit
 from sklearn.metrics import average_precision_score, roc_auc_score
 
 ROOT = Path(__file__).resolve().parents[2]
-BCD2 = ROOT / "outputs/postreview_upgrade/u1_bcd2_expanded_utility"
-OUT = ROOT / "outputs/postreview_upgrade/u1f_multidimensional_utility"
+BCD2 = ROOT / "authorized_inputs/predictive_utility"
+OUT = ROOT / "outputs/multidimensional_utility"
 PERF = OUT / "performance"; CAL = OUT / "calibration"; QC = OUT / "qc"
 
 
@@ -117,11 +117,11 @@ def main():
     rec.to_csv(QC/"auroc_reconciliation.csv",index=False)
     if rec.abs_error.max()>1e-12: raise RuntimeError("AUROC reconciliation failed")
     syn=perf.loc[perf.training_type.eq("SYNTHETIC_TRAINED")].copy(); real=perf.loc[perf.training_type.eq("REAL_TRAINED")].copy()
-    complete=pd.read_csv(BCD2/"performance/u1_bcd2_complete_performance_grid.csv")
+    complete=pd.read_csv(BCD2/"performance/complete_performance_grid.csv")
     idcols=["generator","seed","model","domain"]
     metriccols=[c for c in syn.columns if c not in idcols and c not in ["utility_estimability"]]
     grid=complete[idcols+["utility_estimability"]].merge(syn[idcols+metriccols],on=idcols,how="left")
-    grid.to_csv(PERF/"u1f_complete_performance_grid.csv",index=False); real.to_csv(PERF/"u1f_real_reference_performance.csv",index=False)
+    grid.to_csv(PERF/"multidimensional_performance_grid.csv",index=False); real.to_csv(PERF/"u1f_real_reference_performance.csv",index=False)
     calcols=["generator","seed","model","domain","training_type","N","events","prevalence","calibration_intercept","calibration_intercept_SE","calibration_intercept_CI_lower","calibration_intercept_CI_upper","calibration_model_intercept","calibration_model_intercept_SE","calibration_slope","calibration_slope_SE","calibration_slope_CI_lower","calibration_slope_CI_upper","abs_calibration_intercept","abs_calibration_slope_deviation","ECE","calibration_status","calibration_failure_reason"]
     perf[calcols].to_csv(CAL/"u1f_calibration_summary.csv",index=False); pd.DataFrame(bin_rows).to_csv(CAL/"u1f_calibration_curve_bins.csv",index=False)
     pd.DataFrame(trace).to_csv(QC/"U1F_NUMERICAL_TRACEABILITY.csv",index=False)

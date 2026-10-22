@@ -1,0 +1,236 @@
+{
+  "nodes": [
+    {
+      "node_id": "mimic",
+      "x": 0,
+      "y": 80,
+      "width": 31,
+      "height": 14,
+      "title": "MIMIC-IV v3.1",
+      "text": "Source training\nHeld-out internal evaluation"
+    },
+    {
+      "node_id": "sic",
+      "x": 34.5,
+      "y": 80,
+      "width": 31,
+      "height": 14,
+      "title": "SICdb v1.0.8",
+      "text": "External evaluation"
+    },
+    {
+      "node_id": "eicu",
+      "x": 69,
+      "y": 80,
+      "width": 31,
+      "height": 14,
+      "title": "eICU-CRD v2.0",
+      "text": "Multicenter external evaluation\nEligible hospital populations"
+    },
+    {
+      "node_id": "source",
+      "x": 0,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "Source cohort",
+      "text": "Training data"
+    },
+    {
+      "node_id": "generator",
+      "x": 17,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "Generator",
+      "text": "Stochastic synthesis"
+    },
+    {
+      "node_id": "realization",
+      "x": 34,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "Realizations",
+      "text": "Multiple datasets"
+    },
+    {
+      "node_id": "learner",
+      "x": 51,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "Learner",
+      "text": "Fixed specification"
+    },
+    {
+      "node_id": "hospital",
+      "x": 68,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "Hospitals",
+      "text": "Destination evaluation"
+    },
+    {
+      "node_id": "eul",
+      "x": 85,
+      "y": 59,
+      "width": 15,
+      "height": 12,
+      "title": "EUL matrix",
+      "text": "Hospital \u00d7 realization"
+    },
+    {
+      "node_id": "targetB",
+      "x": 0,
+      "y": 34,
+      "width": 47.5,
+      "height": 16,
+      "title": "Primary Target B",
+      "text": "New utility-estimable realization \u00d7\nfuture eligible exchangeable hospital"
+    },
+    {
+      "node_id": "targetA",
+      "x": 52.5,
+      "y": 34,
+      "width": 47.5,
+      "height": 16,
+      "title": "Secondary Target A",
+      "text": "Future eligible hospital\naveraged over realizations"
+    },
+    {
+      "node_id": "M4",
+      "x": 0,
+      "y": 2,
+      "width": 22,
+      "height": 15,
+      "title": "M4",
+      "text": "Single realization\nacross hospitals"
+    },
+    {
+      "node_id": "M3",
+      "x": 26,
+      "y": 2,
+      "width": 22,
+      "height": 15,
+      "title": "M3",
+      "text": "Multiple realizations\naggregated before\nhospital inference"
+    },
+    {
+      "node_id": "M2",
+      "x": 52,
+      "y": 2,
+      "width": 22,
+      "height": 15,
+      "title": "M2",
+      "text": "Crossed realization / hospital /\ninteraction representation\nDiagonal V\u2095"
+    },
+    {
+      "node_id": "M1",
+      "x": 78,
+      "y": 2,
+      "width": 22,
+      "height": 15,
+      "title": "M1",
+      "text": "Same crossed structure\nFull V\u2095"
+    }
+  ],
+  "arrows": [
+    {
+      "from_xy": [
+        15.4,
+        65
+      ],
+      "to_xy": [
+        16.5,
+        65
+      ],
+      "meaning": "Process flow"
+    },
+    {
+      "from_xy": [
+        32.4,
+        65
+      ],
+      "to_xy": [
+        33.5,
+        65
+      ],
+      "meaning": "Process flow"
+    },
+    {
+      "from_xy": [
+        49.4,
+        65
+      ],
+      "to_xy": [
+        50.5,
+        65
+      ],
+      "meaning": "Process flow"
+    },
+    {
+      "from_xy": [
+        66.4,
+        65
+      ],
+      "to_xy": [
+        67.5,
+        65
+      ],
+      "meaning": "Process flow"
+    },
+    {
+      "from_xy": [
+        83.4,
+        65
+      ],
+      "to_xy": [
+        84.5,
+        65
+      ],
+      "meaning": "Process flow"
+    },
+    {
+      "from_xy": [
+        22.3,
+        9.5
+      ],
+      "to_xy": [
+        25.7,
+        9.5
+      ],
+      "meaning": "Strategy comparison; not a causal ablation"
+    },
+    {
+      "from_xy": [
+        48.3,
+        9.5
+      ],
+      "to_xy": [
+        51.7,
+        9.5
+      ],
+      "meaning": "Strategy comparison; not a causal ablation"
+    },
+    {
+      "from_xy": [
+        74.3,
+        9.5
+      ],
+      "to_xy": [
+        77.7,
+        9.5
+      ],
+      "meaning": "Strategy comparison; not a causal ablation"
+    }
+  ],
+  "strategy_contrasts": {
+    "M3\u2212M4": "Repeated-realization information strategy contrast",
+    "M2\u2212M3": "Crossed-structure strategy contrast",
+    "M1\u2212M2": "Full-covariance component contrast",
+    "M1\u2212M4": "Complete-strategy contrast"
+  },
+  "numeric_results_shown": false
+}

@@ -1,0 +1,4 @@
+generator,generation_attempted_n,utility_estimable_n,generation_failure_n,p_success,p_success_exact_95ci_lower,p_success_exact_95ci_upper
+CTGAN,15,15,0,1.0,0.7819806390891612,1.0
+GaussianCopula,15,15,0,1.0,0.7819806390891612,1.0
+TabDDPM,15,14,1,0.9333333333333333,0.6805154334216967,0.9983135697586446

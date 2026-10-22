@@ -1,17 +1,11 @@
-# Analysis workflow
+# Analysis and reproduction workflow
 
-The order below reflects the locked scientific dependency graph. Scripts are intentionally close to production sources rather than refactored into a new framework.
+1. Inspect current definitions in ESTIMANDS.md and the released study config.
+2. Run public fabricated tests; these use no clinical database.
+3. Verify approved aggregate sources and final manuscript figures against the public manifest.
+4. Render Figures 1–5 from released aggregate CSVs. Rendering performs no fitting, new decision calculation or scientific resampling.
+5. For separately authorized deeper reconstruction, supply the input contracts described in DATA_ACCESS.md. Source preparation/training code remains an access-dependent interface, not evidence that all historical raw-source steps are independently replayable.
 
-1. Build the adult first-ICU-stay MIMIC-IV cohort and stage events through 48 h (`src/cohort`).
-2. Derive the static first-24-hour representation for MIMIC-IV and SICdb, then construct the 150-field MIMIC-IV training contract (`src/harmonization`).
-3. Build the eICU-CRD contract from the authorized canonical nested-event asset. Observed-hour density uses `FLOOR(offset/60)` for `0 <= offset < 1440` (`src/harmonization/build_eicu_contract.py`).
-4. Generate 15 realizations per generator with seeds 42–56 (`src/generators`). The TabDDPM outcome is categorical; production sampling is non-EMA. Do not repair collapse, substitute seeds, or condition sampling on the outcome.
-5. Record all 45 attempts for reliability. Train downstream models only for utility-estimable realizations, using `src/models/frozen_learners.py`.
-6. Produce identically ordered real/synthetic prediction matrices for MIMIC internal, SICdb external, and eICU-CRD external samples. Prediction artifacts are intentionally excluded from GitHub.
-7. Compute AUROC, AP skill, Brier skill, log-loss skill, and calibration (`src/estimands`).
-8. Run generator-level hierarchical bootstrap (`src/bootstrap/generator_hierarchical_bootstrap.py`).
-9. Lock outcome-independent `D_W`, create paired patient-bootstrap full covariance blocks, and fit the crossed-effects REML (`src/multicenter`).
-10. Compute fidelity, structural validity, measurement-process, and empirical privacy diagnostics as separate dimensions (`src/fidelity`, `src/measurement_process`, `src/privacy`).
-11. Generate Figure 1 using `src/reporting/generate_figure1.py`. Other publication figures require reviewed aggregate result inputs that are not redistributed in this code-only release.
+`decision_evaluation/core.py` contains the executed M1/M2 crossed REML engine, hospital-only estimators, standardized Gaussian/t5/skew-normal DGPs, frozen decision rules and metrics. `simulation.py` contains deterministic paired M1–M4 orchestration and latent truth generation. `summarize.py` contains equal-cell summaries, common-success paired contrasts, coverage and recovery. `bootstrap.py` implements conditional-on-sampling-covariance uncertainty; `operational.py` separates generation reliability from conditional utility. These modules are provided for inspection and authorized reconstruction, and are never invoked by display reproduction.
 
-The U2 scripts expect the historical production artifact layout under `outputs/postreview_upgrade/...`. This layout is retained to preserve traceability. Users may recreate it after obtaining source data, or adapt only path plumbing while preserving ordered row identities, estimands, resampling, and covariance definitions.
+The portable fabricated-data interface is a bounded demonstration with its own frozen compatibility fixtures. It is not an alternative authority for current manuscript estimates. General clinical-pipeline utilities retain schema-level identifiers in code; no records containing their values are released.

@@ -8,6 +8,7 @@ Usage:
   python run_formal_tabddpm.py <TABDDPM_REPO> <DATA_PARQUET> <RUN_DIR> <SEED> <N_EPOCHS> <NUM_TIMESTEPS>
 """
 import copy
+import shutil
 import hashlib
 import json
 import os
@@ -31,6 +32,8 @@ NUM_TIMESTEPS = int(sys.argv[6]) if len(sys.argv) > 6 else 1000
 N_SYNTHETIC = 40745
 
 os.makedirs(RUN_DIR, exist_ok=True)
+SCRIPT_SHA = hashlib.sha256(open(__file__, "rb").read()).hexdigest()
+shutil.copyfile(__file__, os.path.join(RUN_DIR, "executed_script_snapshot.py"))
 
 sys.path.insert(0, TABDDPM_REPO)
 from tab_ddpm.modules import MLPDiffusion
@@ -78,7 +81,9 @@ try:
 
     config = {"generator": "TabDDPM_corrected", "seed": SEED, "n_epochs": N_EPOCHS, "num_timesteps": NUM_TIMESTEPS,
               "d_layers": [256, 256], "optimizer": "AdamW", "lr": 1e-3, "weight_decay": 1e-4,
-              "ema_decay": 0.999, "scheduler": "cosine",
+              "ema_decay": 0.999, "diffusion_noise_schedule": "cosine",
+              "optimizer_lr_schedule": "linear_decay_over_actual_updates",
+              "producer_script_sha256": SCRIPT_SHA, "sampling_weights": "FINAL_NON_EMA",
               "numeric_normalization": "QuantileTransformer(output_distribution=normal)",
               "n_synthetic": N_SYNTHETIC, "device": str(device), "training_data_sha256": data_hash,
               "tab_ddpm_git_commit": git_commit}
@@ -90,9 +95,9 @@ try:
                  f"cuda_available={torch.cuda.is_available()}\nhostname={platform.node()}\n")
 
     with open(os.path.join(RUN_DIR, "checkpoint_not_applicable"), "w") as fh:
-        fh.write("No intermediate checkpoint saved in this run script; final EMA-weighted model "
+        fh.write("No intermediate checkpoint saved in this run script; final non-EMA model "
                   "state is not persisted separately since seed + config + data hash fully determine "
-                  "the run and reproducibility does not depend on mid-training checkpoints here.\n")
+                  "the requested run; hardware-level bitwise determinism is not asserted.\n")
 
     t0 = time.time()
     tracemalloc.start()
@@ -131,9 +136,12 @@ try:
     Xt = torch.tensor(X_glue, device=device)
     BATCH = 256
     n = Xt.shape[0]
-    steps_per_epoch = max(1, n // BATCH)
+    steps_per_epoch = len(range(0, n, BATCH))
     total_steps = N_EPOCHS * steps_per_epoch
     step = 0
+    executed_lr_min = float("inf")
+    negative_lr_updates = 0
+    zero_lr_updates = 0
     losses = []
     for epoch in range(N_EPOCHS):
         perm = torch.randperm(n, device=device)  # global seed set once above (SEED); matches B1 implementation
@@ -144,6 +152,10 @@ try:
             frac_done = step / max(1, total_steps)
             for pg in opt.param_groups:
                 pg["lr"] = LR * (1 - frac_done)
+            executed_lr = float(opt.param_groups[0]["lr"])
+            executed_lr_min = min(executed_lr_min, executed_lr)
+            negative_lr_updates += int(executed_lr < 0)
+            zero_lr_updates += int(executed_lr == 0)
             opt.zero_grad()
             loss_multi, loss_gauss = diffusion.mixed_loss(batch, {})
             loss = loss_multi + loss_gauss
@@ -192,7 +204,10 @@ try:
     restored.to_parquet(os.path.join(RUN_DIR, "synthetic_restored.parquet"))
 
     # ---- integrity QC ----
-    qc = {}
+    qc = {"optimizer_schedule": {"steps_per_epoch": steps_per_epoch, "planned_updates": total_steps,
+                               "executed_updates": step, "initial_lr": LR, "minimum_executed_lr": executed_lr_min,
+                               "negative_lr_updates": negative_lr_updates, "zero_lr_updates": zero_lr_updates},
+          "producer_script_sha256": SCRIPT_SHA, "sampling_weights": "FINAL_NON_EMA"}
     qc["schema"] = {"n_rows": int(len(sample_df)), "n_rows_expected": N_SYNTHETIC,
                      "n_rows_match": len(sample_df) == N_SYNTHETIC, "n_cols": int(sample_df.shape[1]),
                      "n_cols_expected": 150, "n_cols_match": sample_df.shape[1] == 150,
@@ -265,7 +280,11 @@ try:
         "schema_valid": bool(run_integrity_ok), "single_class_outcome": bool(qc["outcome"]["single_class_outcome"]),
         "density_violation_rate": round(dens_oob / (len(sample_df) * len(dens_cols)), 6),
         "ordering_violation_rate": round(order_all / (len(sample_df) * len(VARS)), 6),
-        "retry_count": 0, "run_status": run_status,
+        "retry_count": 0, "run_status": run_status, "producer_script_sha256": SCRIPT_SHA,
+        "batch_size": BATCH, "actual_update_count": step, "minimum_executed_lr": executed_lr_min,
+        "negative_lr_updates": negative_lr_updates, "zero_lr_updates": zero_lr_updates,
+        "diffusion_noise_schedule": "cosine", "optimizer_lr_schedule": "linear_decay_over_actual_updates",
+        "sampling_weights": "FINAL_NON_EMA",
     }
     with open(os.path.join(RUN_DIR, "synthetic_manifest.json"), "w") as fh:
         json.dump(manifest, fh, indent=2)

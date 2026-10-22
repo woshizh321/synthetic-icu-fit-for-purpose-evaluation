@@ -19,8 +19,8 @@ import duckdb
 np.random.seed(42)
 
 ROOT = os.environ.get("ICU_PROJECT_ROOT", ".")
-OUT1 = f"{ROOT}/outputs/preflight1"
-OUT2 = f"{ROOT}/outputs/preflight2a"
+OUT1 = f"{ROOT}/outputs/cohort"
+OUT2 = f"{ROOT}/outputs/representation"
 STG1 = f"{OUT1}/staging"
 STG2 = f"{OUT2}/staging"
 SIC = os.environ["SICDB_ROOT"]

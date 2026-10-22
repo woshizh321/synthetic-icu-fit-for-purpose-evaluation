@@ -17,7 +17,7 @@ np.random.seed(42)
 
 HOSP = os.environ["MIMIC_HOSP_ROOT"]
 ICU = os.environ["MIMIC_ICU_ROOT"]
-STG = os.path.join(os.environ.get("ICU_WORK_ROOT", "outputs"), "preflight1", "staging")
+STG = os.path.join(os.environ.get("ICU_WORK_ROOT", "outputs"), "cohort", "staging")
 
 con = duckdb.connect(f"{STG}/preflight.duckdb")
 con.execute("PRAGMA memory_limit='12GB'; PRAGMA threads=10;")

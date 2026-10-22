@@ -15,14 +15,14 @@ from scipy.stats import norm, rankdata
 from sklearn.metrics import roc_auc_score
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "outputs/postlock_upgrade/final_estimand_stochasticity_v1"
+OUT = ROOT / "outputs/utility_evaluation"
 HC = OUT / "hospital_crossed"
 DD = OUT / "domain_distance"
 QC = OUT / "qc"
-REG = ROOT / "outputs/postreview_upgrade/u1_bcd2_expanded_utility/manifests/prediction_registry.csv"
-PERF = ROOT / "outputs/postreview_upgrade/u1_bcd2_expanded_utility/performance/u1_bcd2_complete_performance_grid.csv"
-ELIG = ROOT / "outputs/postreview_upgrade/u1h_b12_protocol_conformant_repair_r2/hospital_effects/hospital_eligibility_registry_repair.csv"
-DW = ROOT / "outputs/postreview_upgrade/u1h_b12_protocol_conformant_repair_r1/domain_distance/u1h_b12_r1_DW_all_hospitals.csv"
+REG = ROOT / "authorized_inputs/predictive_utility/manifests/prediction_registry.csv"
+PERF = ROOT / "authorized_inputs/predictive_utility/performance/complete_performance_grid.csv"
+ELIG = ROOT / "authorized_inputs/hospital_eligibility.csv"
+DW = ROOT / "authorized_inputs/domain_distance.csv"
 B = 2000
 BASE_SEED = 2027091001
 GENERATORS = ["GaussianCopula", "CTGAN", "TabDDPM"]

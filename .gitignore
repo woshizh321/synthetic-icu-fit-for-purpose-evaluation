@@ -31,3 +31,9 @@ tmp/
 venv/
 env/
 environments/
+
+reproduced_displays/
+reproduction_results/
+authorized_inputs/
+!src/models/
+!src/models/*.py

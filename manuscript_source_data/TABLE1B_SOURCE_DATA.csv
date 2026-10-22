@@ -1,0 +1,4 @@
+hospital_population,eligibility_rule,analysis_role,hospital_n,admissions_total,events_total,non_events_total,event_rate
+H100,Admissions ≥100; events ≥10; non-events ≥10,Sensitivity,127,97113,6104,91009,0.0628546126677
+H200,Admissions ≥200; events ≥20; non-events ≥20,Primary,85,84628,5495,79133,0.064931228435
+H300,Admissions ≥300; events ≥30; non-events ≥30,Sensitivity,66,75546,5021,70525,0.0664628173563

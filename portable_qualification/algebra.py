@@ -1,4 +1,4 @@
-"""Frozen U5 post-fit qualification algebra."""
+"""Post-fit qualification algebra."""
 from __future__ import annotations
 
 import math

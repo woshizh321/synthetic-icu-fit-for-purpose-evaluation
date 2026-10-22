@@ -1,0 +1,40 @@
+model,parameter,value
+GaussianCopula,implementation,SDV
+GaussianCopula,hyperparameters,SDV defaults (no tunable hyperparameters for this synthesizer)
+GaussianCopula,default_distribution,beta (SDV default for GaussianCopulaSynthesizer)
+CTGAN,epochs,300
+CTGAN,batch_size,500
+CTGAN,generator_dim,"[256, 256]"
+CTGAN,discriminator_dim,"[256, 256]"
+CTGAN,embedding_dim,128
+CTGAN,generator_lr,0.0002
+CTGAN,discriminator_lr,0.0002
+TabDDPM,n_epochs,100
+TabDDPM,num_timesteps,1000
+TabDDPM,d_layers,"[256, 256]"
+TabDDPM,optimizer,AdamW
+TabDDPM,lr,0.001
+TabDDPM,weight_decay,0.0001
+TabDDPM,ema_decay,0.999
+TabDDPM,diffusion_noise_schedule,cosine
+TabDDPM,optimizer_lr_schedule,linear_decay_over_actual_updates
+TabDDPM,sampling_weights,FINAL_NON_EMA
+TabDDPM,numeric_normalization,QuantileTransformer(output_distribution=normal)
+TabDDPM,n_synthetic,40745
+LR_L2,penalty,l2
+LR_L2,C,1.0
+LR_L2,max_iter,5000
+LR_L2,solver,lbfgs
+LR_L2,class_weight,None
+LR_L2,preprocessing,StandardScaler fit on each training artifact only
+XGBoost,n_estimators,200
+XGBoost,max_depth,5
+XGBoost,learning_rate,0.05
+XGBoost,min_child_weight,1
+XGBoost,subsample,0.8
+XGBoost,colsample_bytree,0.8
+XGBoost,eval_metric,logloss
+XGBoost,random_state,42
+XGBoost,n_jobs,4
+Prediction,n_features,107
+Generation,outcome_conditioning,false

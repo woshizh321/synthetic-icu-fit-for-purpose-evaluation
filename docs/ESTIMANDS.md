@@ -1,35 +1,11 @@
-# Estimands and metric direction
+# Estimands and decisions
 
-For a performance metric where larger values are preferable:
+EUL = destination AUROC(real-trained) − destination AUROC(synthetic-trained), with learner and destination held fixed. Primary Target B is a new utility-estimable realization at a future H200-exchangeable hospital. Secondary Target A averages across realizations at a future eligible hospital.
 
-\[
-IUL=M_{RI}-M_{SI},\qquad EUL=M_{RE}-M_{SE},\qquad ITL=EUL-IUL.
-\]
+For M1/M2 the plug-in predictive variance is Var(mu-hat)+v_h for A and Var(mu-hat)+v_s+v_h+v_interaction for B. Future AUROC measurement error is not added. M3/M4 use a hospital-only distribution and therefore have naive Target-B extrapolations. M4's A output is limited to a specific realization.
 
-`RI` and `SI` denote real- and synthetic-trained models evaluated internally; `RE` and `SE` denote the corresponding models evaluated externally. AUROC EUL is the primary external estimand. AUROC ITL is the secondary transport interaction. Negative ITL indicates attenuation of the synthetic–real gap externally; it does not establish superior transportability or superior absolute external performance.
+P95 uses probabilities ≥.95 / ≤.05 for qualified / not-qualified; all other successful fits are indeterminate. C95 qualifies when q97.5≤delta and rejects when q2.5>delta. Failure is separate from all three decision states. Confidence sensitivity uses .80,.90,.95,.975,.99 at each fixed delta.
 
-Skill transformations use a null reference calculated separately within each evaluation database:
+DER is mismatch probability against the three-state oracle; DY is definitive decision yield; CDY is correct definitive yield. FQ-all is false qualification over all successful fits. SER and FQ-def condition on definitive decisions within a template–regime cell. Their macro estimates average defined cell ratios, omitting cells with zero definitive count and explicitly reporting contributing cell_n. They are not ratios of pooled counts. Paired contrasts use common successful replicates; four-way-common sensitivity uses the intersection of all four strategies.
 
-\[
-APS=(AP-\pi)/(1-\pi),
-\]
-
-\[
-BSS=1-BS/[\pi(1-\pi)],
-\]
-
-\[
-LLS=1-LL/[-\pi\log(\pi)-(1-\pi)\log(1-\pi)].
-\]
-
-Here \(\pi\) is the database-specific event prevalence. Calibration intercept is estimated as an offset model on clipped logits; calibration slope uses a freely estimated intercept and slope. No recalibration is performed.
-
-The generator-level hierarchical bootstrap resamples synthetic seeds and the clinical evaluation sample. For eICU-CRD, hospitals are resampled and patients are resampled within selected hospitals. The crossed model is
-
-\[
-EUL_{sh}=\mu+u_s+v_h+w_{sh}+e_{sh},
-\]
-
-with full within-hospital seed×seed sampling covariance. Prediction intervals are reported for the hospital-average-seed target and for a new-seed/new-hospital target. Hospital-level ITL crossed inference was not estimated; the full joint MIMIC-plus-hospital covariance was not replaced by a simplified approximation.
-
-The outcome-independent hospital distance \(D_W\) is the mean of 21 median-feature 1-Wasserstein distances, each scaled by the corresponding real MIMIC-IV training sample standard deviation (`ddof=1`).
+The public helper API `src.estimands.utility` also exposes internal/external performance-difference algebra with API keys IUL and ITL for compatibility. These helper quantities are not the manuscript's future-use targets or a secondary transport claim. Current future-use inference is implemented in `decision_evaluation/`.

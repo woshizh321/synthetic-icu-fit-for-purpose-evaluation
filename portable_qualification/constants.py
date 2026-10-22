@@ -11,7 +11,7 @@ QUALIFICATION_BOUNDARY = (
     "probability, or patient-benefit estimate."
 )
 
-# Exact U5-00 canonical machine-readable boundary. Keep one source of truth.
+# Canonical machine-readable boundary. Keep one source of truth.
 U4_CALIBRATION_BOUNDARY = (
     "Calibration was target and distribution dependent: unseen-hospital "
     "generator-average coverage was less stable in some interaction-dominant "

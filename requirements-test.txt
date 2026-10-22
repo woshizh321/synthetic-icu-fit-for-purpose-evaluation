@@ -1,0 +1,5 @@
+-r requirements-display.txt
+scipy==1.17.1
+jsonschema>=4.18
+pytest>=8,<10
+duckdb==1.5.3

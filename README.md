@@ -1,41 +1,59 @@
-# Stochasticity-aware multicenter evaluation of synthetic tabular ICU data
+# Decision consequences of evaluating synthetic clinical-data suitability across stochastic realizations and hospitals
 
-This repository contains the reproducible analysis code for evaluating generation reliability, representation fidelity, predictive utility, stochastic variability, multicenter heterogeneity, and empirical privacy of synthetic tabular ICU data.
+## Purpose
+
+A methodological evaluation of synthetic clinical-data suitability for a fixed ICU mortality-prediction task across stochastic synthetic-data realizations and destination hospitals. Error, decisiveness, false qualification and interval coverage are interpreted jointly; no strategy is optimal or universally superior.
 
 ## Study architecture
 
-MIMIC-IV is the source database for model training and held-out internal evaluation. SICdb is an independent external evaluation database, and eICU-CRD provides multicenter external evaluation. Three generators (GaussianCopula, CTGAN, and TabDDPM) were evaluated across 15 prespecified seeds (42–56), with logistic regression and XGBoost as downstream learners. AUROC external utility loss (EUL) is the primary external estimand; transport interaction (ITL) is secondary. The multicenter analysis uses crossed seed and hospital effects with seed×hospital interaction and full within-hospital seed covariance.
+MIMIC-IV v3.1 supplies source training and held-out internal evaluation; SICdb v1.0.8 supplies external evaluation; eICU-CRD v2.0 supplies multicenter external evaluation and eligible hospital populations. GaussianCopula, CTGAN and TabDDPM each have 15 generation attempts. Utility-estimable realizations are **15/15, 15/15 and 14/15**, respectively. One TabDDPM attempt has single-class collapse and remains in the reliability denominator. Learners are L2 logistic regression and XGBoost, with fixed specifications.
 
-The generation-reliability denominator contains all 45 attempts. Utility analyses are conditional on estimability: 15 GaussianCopula, 15 CTGAN, and 12 TabDDPM realizations. The three single-class TabDDPM collapses remain reliability outcomes and are not replaced or repaired.
+Time zero is ICU admission; prediction is at 24 hours using the [0,24 h) measurement window. The mortality endpoints are replication-compatible, not strictly harmonized. H100, H200 and H300 contain 127, 85 and 66 hospitals; H200 is primary. Different thresholds define different target hospital populations.
 
-## Data are not included
+## Future-use targets
 
-No row-level clinical data or synthetic datasets are included in this repository. MIMIC-IV, SICdb, and eICU-CRD must be obtained independently under their applicable access terms. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are archived at https://doi.org/10.5281/zenodo.22822482.
+External utility loss (EUL) is destination AUROC of the real-trained model minus destination AUROC of the corresponding synthetic-trained model. Primary **Target B** is latent EUL for a new utility-estimable realization at a future hospital exchangeable with the H200-eligible population. Secondary **Target A** averages over the realization distribution at a future eligible hospital. Future finite-sample AUROC measurement error is excluded from these latent targets.
 
-See [docs/DATA_ACCESS.md](docs/DATA_ACCESS.md) before running any source-data step.
+## Evaluation strategies
 
-## Repository map
+- **M1:** all estimable realizations; crossed realization, hospital and interaction effects; full within-hospital sampling covariance.
+- **M2:** the same crossed model and data, with diagonal sampling covariance.
+- **M3:** realizations aggregated before hospital-only inference; Target-B output is naive extrapolation.
+- **M4:** one randomly selected realization across hospitals; Target-B output is naive extrapolation.
 
-- `configs/`: frozen study, generator, learner, bootstrap, hospital, and privacy settings.
-- `src/cohort/`: MIMIC-IV cohort and source-window extraction.
-- `src/harmonization/`: MIMIC-IV/SICdb static representation, training contract, and corrected eICU-CRD contract.
-- `src/generators/`: authoritative SDV and non-EMA TabDDPM generation scripts.
-- `src/models/`: exact learner kernels.
-- `src/estimands/` and `src/bootstrap/`: utility metrics, calibration, and hierarchical inference.
-- `src/multicenter/`: outcome-independent domain distance and full-covariance crossed-effects REML.
-- `src/fidelity/`, `src/measurement_process/`, and `src/privacy/`: separate qualification-domain kernels.
-- `src/reporting/`: editable Figure 1 generation.
-- `tests/`: fabricated-data unit tests only.
+P95 is primary: qualify if P(EUL≤δ)≥0.95, reject if ≤0.05, otherwise indeterminate. Tolerances are 0.025, 0.05, 0.10 and 0.20; they are methodological stress tolerances, not clinical standards. Confidence sensitivity at 0.80, 0.90, 0.95, 0.975 and 0.99 is separate from model architecture. C95 uses central-95% interval endpoints. Main quantities are DER, DY, CDY, FQ-all, macro-SER, macro FQ-def and coverage.
+
+## What this repository contains
+
+Current target/decision and known-truth simulation code in `decision_evaluation/`; reproducibility configs; approved aggregate manuscript source data and final figures; a renderer for Figures 1–5 and the supplementary confidence trajectories; fabricated fixtures and tests; and supporting source-pipeline interfaces. See [workflow](docs/ANALYSIS_WORKFLOW.md) and [scope](docs/PUBLIC_RELEASE_SCOPE.md).
+
+## What this repository does not contain
+
+Row-level MIMIC-IV, SICdb or eICU records; evaluated synthetic patient rows derived from restricted sources; patient predictions; trained clinical model objects or weights; private bootstrap indices; source hospital identifiers or restricted hospital-indexed derivatives; credentials; private project records; manuscript drafts; or superseded analytical outputs.
 
 ## Reproduction boundary
 
-Published results were generated under frozen software/data configurations. Reproduction requires access to the same source database releases and compatible software versions. The repository documents exact recovered versions where available, but does not promise bit-for-bit identity across platforms. Patient-level prediction files, fitted models, checkpoints, bootstrap indices, and aggregate manuscript outputs are deliberately excluded.
+**A — Public fabricated tests:** run the software tests and portable fabricated example without clinical access.
 
-Start with [docs/ANALYSIS_WORKFLOW.md](docs/ANALYSIS_WORKFLOW.md), then review [docs/ESTIMANDS.md](docs/ESTIMANDS.md) and [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
+**B — Aggregate manuscript displays:** render main displays from `manuscript_source_data/` without clinical records or refitting:
 
-For the patient-data-free, CPU-only post-fit qualification prototype and fully
-fabricated reuse demonstration, see [README_PORTABLE.md](README_PORTABLE.md).
+```sh
+python -m pip install -r requirements-display.txt
+python reproduction/verify_public_release.py
+python reproduction/reproduce_main_displays.py --output reproduced_displays
+python reproduction/verify_public_release.py --rendered reproduced_displays
+```
 
-## Citation and license
+**C — Authorized source reconstruction:** clinical training/evaluation and empirical-calibrated simulation execution require separately authorized database access plus the specified restricted input interfaces and historical dependencies. Public aggregate display reproduction does not establish complete raw-to-result clinical replay. No clinical analysis, production simulation or scientific model was rerun to prepare this release.
 
-Original software and accompanying documentation in this repository are licensed under the MIT License; see LICENSE. Third-party dependencies retain their own licenses and are not relicensed by this repository. This software license grants no rights to MIMIC-IV, SICdb, eICU-CRD, or restricted patient-derived data. The separate Zenodo materials retain the terms stated in that archive. The manuscript DOI is not yet assigned.
+## Public release
+
+Current release: **v1.3.0-manuscript-aligned**. Stable archive: [Zenodo concept DOI 10.5281/zenodo.22822481](https://doi.org/10.5281/zenodo.22822481). The exact version DOI is recorded with the immutable GitHub release after archive publication.
+
+## Citation
+
+See [CITATION.cff](CITATION.cff).
+
+## License and data governance
+
+Original software is MIT licensed. Released aggregate results/documentation retain CC BY 4.0. Third-party software and clinical databases retain their own licenses and access requirements; a software license does not grant clinical-data rights. See [data access](docs/DATA_ACCESS.md).

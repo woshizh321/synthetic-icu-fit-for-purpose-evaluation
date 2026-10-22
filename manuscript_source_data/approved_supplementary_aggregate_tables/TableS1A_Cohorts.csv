@@ -1,0 +1,5 @@
+database,version,role,analysis_N,event_N,prediction_landmark,endpoint
+MIMIC-IV,3.1,Source training,40745,2358,24 h after ICU admission,7-day post-landmark all-cause mortality
+MIMIC-IV,3.1,Held-out internal evaluation,10187,590,24 h after ICU admission,7-day post-landmark all-cause mortality
+SICdb,1.0.8,External evaluation,12294,548,24 h after ICU admission,7-day post-landmark all-cause mortality
+eICU-CRD,2.0,Multicenter external evaluation,104322,6391,24 h after ICU admission,Bounded 7-day post-landmark in-hospital mortality proxy

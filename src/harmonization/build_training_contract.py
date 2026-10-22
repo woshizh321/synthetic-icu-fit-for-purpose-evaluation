@@ -13,8 +13,8 @@ SEED = 42
 np.random.seed(SEED)
 
 ROOT = os.environ.get("ICU_PROJECT_ROOT", ".")
-STG2A = f"{ROOT}/outputs/preflight2a/staging"
-OUT = f"{ROOT}/outputs/preflight2b0"
+STG2A = f"{ROOT}/outputs/representation/staging"
+OUT = f"{ROOT}/outputs/training_contract"
 QUAL = f"{OUT}/qualification"
 os.makedirs(QUAL, exist_ok=True)
 os.makedirs(f"{OUT}/tables", exist_ok=True)
@@ -73,7 +73,7 @@ def file_sha256(path):
     return h.hexdigest()
 
 manifest = {
-    "source": "outputs/preflight2a/staging/repA_mimic.parquet (P2A-06 Representation A extract)",
+    "source": "outputs/representation/staging/repA_mimic.parquet (fixed representation extract)",
     "split_provenance": "sklearn.train_test_split(test_size=0.20, stratify=y, random_state=42) "
                         "on the DEC-003 primary certainty-based MIMIC cohort (N=50,932); "
                         "TRAIN partition only used here (SICdb and MIMIC-test never touched)",

@@ -1,18 +1,9 @@
-# Data access
+# Data access and interface contracts
 
-This is a code-only repository. It does not redistribute MIMIC-IV, SICdb, eICU-CRD, synthetic datasets, participant-level predictions, or fitted models.
+MIMIC-IV v3.1, SICdb v1.0.8 and eICU-CRD v2.0 must be obtained independently under the providers' applicable access terms. Public software licensing does not confer access to these databases or permit redistribution of derived patient records.
 
-Researchers must obtain each source database independently and comply with its current credentialing, data-use, and citation requirements. Nothing in this repository bypasses those controls. The evaluated MIMIC-IV-derived row-level synthetic datasets are not redistributed under the applicable source-data governance restrictions. Aggregate results and fabricated demonstration materials are available at https://doi.org/10.5281/zenodo.22822482. The MIT software license does not grant access to or reuse rights over the source databases or restricted patient-derived datasets.
+For current paired-simulation orchestration, `authorized_inputs/` must be supplied by an authorized user. It contains a six-template registry, non-null truth-regime registry, hospital-by-realization EUL interface and aligned within-hospital covariance blocks. The expected clinical eligibility definitions are H100 (100/10/10), H200 (200/20/20) and H300 (300/30/30), respectively for admissions/events/non-events. These are input contracts, not files in this release. Never add them to a public commit.
 
-The source scripts accept local locations through environment variables:
+Clinical source replay additionally depends on historical cohort-selection, patient-level train/test separation, endpoint logic, 24-hour measurement extraction, frozen model predictions and sampling-covariance bootstrap inputs. Exact historical reconstruction is not established solely by availability of raw database copies. Measurement timestamps are distinct from proven clinical availability; the eICU bounded mortality proxy is replication-compatible, not fully harmonized with all-cause follow-up.
 
-```bash
-export MIMIC_HOSP_ROOT=/path/to/mimic/hosp
-export MIMIC_ICU_ROOT=/path/to/mimic/icu
-export SICDB_ROOT=/path/to/sicdb
-export EICU_MASTER_PARQUET=/path/to/authorized/eicu/master_icu_stay.parquet
-export ICU_PROJECT_ROOT=/path/to/this/repository
-export ICU_WORK_ROOT=/path/to/derived/workspace
-```
-
-`EICU_MASTER_PARQUET` refers to the study’s canonical, locally constructed nested-event asset. Its row-level builder is not distributed here because it belongs to separately governed source-data infrastructure. This is a documented reproduction dependency, not an included dataset.
+Only cohort totals, eligible-population summaries, template/regime simulation summaries, model-level variance summaries and display-level aggregate classifications are distributed. No patient, encounter, source-hospital identifier, per-patient prediction, synthetic patient record, private bootstrap index, or restricted hospital-indexed estimate is distributed.

@@ -11,12 +11,12 @@ import pandas as pd
 from scipy.stats import wasserstein_distance
 
 ROOT = Path(__file__).resolve().parents[2]
-BASE = ROOT / "outputs/postreview_upgrade/u1h_b12_protocol_conformant_repair_r1"
+BASE = ROOT / "outputs/domain_distance"
 OUT = BASE / "domain_distance"
-SCRIPT = ROOT / "scripts/postreview_upgrade/u1h_b12_protocol_conformant_repair_r1/01_build_dw_preoutcome.py"
-SOURCE = ROOT / "outputs/preflight2b0/qualification/mimic_generator_contract_train.parquet"
-EICU = ROOT / "outputs/postreview_upgrade/u0_r1_density_correction/eicu_replication_contract_density_corrected_v1.parquet"
-FILL = ROOT / "outputs/preflight2b0/qualification/fill_values_mimic_train_median.json"
+SCRIPT = ROOT / "src/multicenter/build_domain_distance.py"
+SOURCE = ROOT / "outputs/training_contract/qualification/mimic_generator_contract_train.parquet"
+EICU = ROOT / "authorized_inputs/eicu_replication_contract.parquet"
+FILL = ROOT / "outputs/training_contract/qualification/fill_values_mimic_train_median.json"
 
 VARS = [
     "heart_rate", "sbp", "dbp", "map", "respiratory_rate", "spo2", "temperature_c",
