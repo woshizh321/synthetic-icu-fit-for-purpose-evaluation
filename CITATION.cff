@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "Please cite this immutable software and aggregate-data release."
-title: "Decision consequences of evaluating synthetic clinical-data suitability across stochastic realizations and hospitals"
+title: "Evaluating synthetic clinical data for future realizations and hospitals"
 type: software
-version: 1.3.0
-date-released: 2026-10-22
+version: 1.4.0
+date-released: 2026-10-30
 repository-code: "https://github.com/woshizh321/synthetic-icu-fit-for-purpose-evaluation"
 doi: 10.5281/zenodo.22822481
 authors:

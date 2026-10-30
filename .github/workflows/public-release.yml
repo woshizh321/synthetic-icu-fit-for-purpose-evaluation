@@ -20,3 +20,5 @@ jobs:
       - run: python -m pip install -r requirements-test.txt
       - run: python -m pytest -q tests
       - run: python reproduction/verify_public_release.py
+      - run: python extension/e1/verify_released_e1.py
+      - run: python extension/e3_e5/reproduce_e3_e5.py --output-dir reproduced_extension

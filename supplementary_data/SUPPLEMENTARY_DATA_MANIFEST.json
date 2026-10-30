@@ -1,0 +1,102 @@
+[
+  {
+    "supplementary_data": 1,
+    "description": "E1 real-trained AUROC",
+    "source_authority": "E1_PI_LOCKED_WITH_QUALIFICATIONS",
+    "source_sha256": "849d96486177d342b824edbd1e37e1d52bbc7fc5e83ad42f329695aa27fe3f57",
+    "output": "supplementary_data/Supplementary_Data_01_E1A_REAL_TRAINED_BASELINE_AUROC.csv",
+    "output_sha256": "849d96486177d342b824edbd1e37e1d52bbc7fc5e83ad42f329695aa27fe3f57",
+    "rows": 8,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 2,
+    "description": "E1 realization-level EUL summary",
+    "source_authority": "E1_PI_LOCKED_WITH_QUALIFICATIONS",
+    "source_sha256": "d7ea650d21d06bcaa5205313a492aa6c884cb0664422355b5c577601fb24ec93",
+    "output": "supplementary_data/Supplementary_Data_02_E1B_REALIZATION_EUL_SUMMARY.csv",
+    "output_sha256": "d7ea650d21d06bcaa5205313a492aa6c884cb0664422355b5c577601fb24ec93",
+    "rows": 12,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 3,
+    "description": "E1 empirical M1/M2/M3 decisions",
+    "source_authority": "E1_PI_LOCKED_WITH_QUALIFICATIONS",
+    "source_sha256": "8b2780b45c4096df83c2a9f72ff2b3088f97ea5415f006df410084a3f329b953",
+    "output": "supplementary_data/Supplementary_Data_03_E1C_EMPIRICAL_M1_M2_M3_P95_DECISIONS.csv",
+    "output_sha256": "8b2780b45c4096df83c2a9f72ff2b3088f97ea5415f006df410084a3f329b953",
+    "rows": 72,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 4,
+    "description": "E1 M4 realization decisions",
+    "source_authority": "E1_PI_LOCKED_WITH_QUALIFICATIONS",
+    "source_sha256": "a4b195ea3b4567f16b2f614cd090cb3f417ddd660388d55991cb3627e1cfb115",
+    "output": "supplementary_data/Supplementary_Data_04_E1D_M4_REALIZATION_DECISIONS.csv",
+    "output_sha256": "a4b195ea3b4567f16b2f614cd090cb3f417ddd660388d55991cb3627e1cfb115",
+    "rows": 352,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 5,
+    "description": "E1 hospital-population decisions",
+    "source_authority": "E1_PI_LOCKED_WITH_QUALIFICATIONS",
+    "source_sha256": "a14dab68110986cce26773075f2780022aa6225f746954c275ea02dd1579d4a7",
+    "output": "supplementary_data/Supplementary_Data_05_E1E_H100_H200_H300_M1_TARGETB_DECISIONS.csv",
+    "output_sha256": "a14dab68110986cce26773075f2780022aa6225f746954c275ea02dd1579d4a7",
+    "rows": 72,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 6,
+    "description": "E3 frozen cost grid",
+    "source_authority": "E3_E5_PI_ACCEPTED_POSTHOC_EXTENSION",
+    "source_sha256": "82733f18f1a6c6ea409435fdd4ec63dfd4e0fb483ff9aa0ab9c21e35fa642fdb",
+    "output": "supplementary_data/Supplementary_Data_06_E3_COST_GRID.csv",
+    "output_sha256": "82733f18f1a6c6ea409435fdd4ec63dfd4e0fb483ff9aa0ab9c21e35fa642fdb",
+    "rows": 30,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 7,
+    "description": "E3 scenario-conditional regret results",
+    "source_authority": "E3_E5_PI_ACCEPTED_POSTHOC_EXTENSION",
+    "source_sha256": "d6cde787e0ad5e0628a530f8a1ae5f8a41cc74d5f389face24f95e0997e2af60",
+    "output": "supplementary_data/Supplementary_Data_07_E3_CONDITIONAL_REGRET_RESULTS.csv",
+    "output_sha256": "d6cde787e0ad5e0628a530f8a1ae5f8a41cc74d5f389face24f95e0997e2af60",
+    "rows": 34560,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 8,
+    "description": "E3 paired strategy contrasts",
+    "source_authority": "E3_E5_PI_ACCEPTED_POSTHOC_EXTENSION",
+    "source_sha256": "87adfea982b1eb6556f8b48b6b2c0d21f4434990170f45612ffe9f34632618d0",
+    "output": "supplementary_data/Supplementary_Data_08_E3_PAIRED_STRATEGY_CONTRASTS.csv",
+    "output_sha256": "ae502170372f6b166d4e5d23e5d70e7987f743a5d806292df3ead56e03626c00",
+    "rows": 36000,
+    "r2_transform": "preserved source columns plus deterministic-equality flag and interpretation"
+  },
+  {
+    "supplementary_data": 9,
+    "description": "E3 fixed-P95 sensitivity",
+    "source_authority": "E3_E5_PI_ACCEPTED_POSTHOC_EXTENSION",
+    "source_sha256": "902c4bf85aadcee9b7f97d9d237ee956008275c94a25cb33560a4db4879c9bda",
+    "output": "supplementary_data/Supplementary_Data_09_E3_FIXED_P95_SENSITIVITY.csv",
+    "output_sha256": "902c4bf85aadcee9b7f97d9d237ee956008275c94a25cb33560a4db4879c9bda",
+    "rows": 69120,
+    "r2_transform": "byte copy"
+  },
+  {
+    "supplementary_data": 10,
+    "description": "E5 complete leave-one-generator-out results",
+    "source_authority": "E3_E5_PI_ACCEPTED_POSTHOC_EXTENSION",
+    "source_sha256": "09f8513defb65ee05fa09b3053cd045a18e39e15079d24e94359be363af0e063",
+    "output": "supplementary_data/Supplementary_Data_10_E5_LEAVE_ONE_GENERATOR_OUT_RESULTS.csv",
+    "output_sha256": "09f8513defb65ee05fa09b3053cd045a18e39e15079d24e94359be363af0e063",
+    "rows": 576,
+    "r2_transform": "byte copy"
+  }
+]

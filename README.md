@@ -1,4 +1,4 @@
-# Decision consequences of evaluating synthetic clinical-data suitability across stochastic realizations and hospitals
+# Evaluating synthetic clinical data for future realizations and hospitals
 
 ## Purpose
 
@@ -25,7 +25,7 @@ P95 is primary: qualify if P(EUL≤δ)≥0.95, reject if ≤0.05, otherwise inde
 
 ## What this repository contains
 
-Current target/decision and known-truth simulation code in `decision_evaluation/`; reproducibility configs; approved aggregate manuscript source data and final figures; a renderer for Figures 1–5 and the supplementary confidence trajectories; fabricated fixtures and tests; and supporting source-pipeline interfaces. See [workflow](docs/ANALYSIS_WORKFLOW.md) and [scope](docs/PUBLIC_RELEASE_SCOPE.md).
+Current target/decision and known-truth simulation code in `decision_evaluation/`; reproducibility configs; approved aggregate manuscript source data and final R2 figures; Supplementary Data 1–10; a renderer for the five R2 figures; public E1 decision-translation verification; a minimal simulated replicate-level input and full E3/E5 reproduction script; fabricated fixtures and tests; and supporting source-pipeline interfaces. See [workflow](docs/ANALYSIS_WORKFLOW.md) and [scope](docs/PUBLIC_RELEASE_SCOPE.md).
 
 ## What this repository does not contain
 
@@ -35,7 +35,7 @@ Row-level MIMIC-IV, SICdb or eICU records; evaluated synthetic patient rows deri
 
 **A — Public fabricated tests:** run the software tests and portable fabricated example without clinical access.
 
-**B — Aggregate manuscript displays:** render main displays from `manuscript_source_data/` without clinical records or refitting:
+**B — Original V2 aggregate manuscript displays:** render the historical displays from `manuscript_source_data/` without clinical records or refitting:
 
 ```sh
 python -m pip install -r requirements-display.txt
@@ -44,11 +44,21 @@ python reproduction/reproduce_main_displays.py --output reproduced_displays
 python reproduction/verify_public_release.py --rendered reproduced_displays
 ```
 
-**C — Authorized source reconstruction:** clinical training/evaluation and empirical-calibrated simulation execution require separately authorized database access plus the specified restricted input interfaces and historical dependencies. Public aggregate display reproduction does not establish complete raw-to-result clinical replay. No clinical analysis, production simulation or scientific model was rerun to prepare this release.
+**C — R2 figures and extensions:** reproduce the five R2 figures, verify the E1 aggregate decision layer, and reproduce E3/E5 from the released minimal simulated input:
+
+```sh
+python reproduction/reproduce_r2_figures.py --output-dir reproduced_r2_figures
+python extension/e1/verify_released_e1.py
+python extension/e3_e5/reproduce_e3_e5.py --output-dir reproduced_extension
+```
+
+The E3/E5 script verifies the released output tables and the 54/31/71 E5 counts. The E1 verifier checks the five locked aggregate hashes, retranslates 496 released P95 decisions, and reconstructs the 24 M4 count rows. Exact commands and dependency groups are in [reproducibility documentation](docs/REPRODUCIBILITY.md).
+
+**D — Authorized source reconstruction:** clinical training/evaluation and E1 clinical-source reconstruction require separately authorized database access plus restricted prediction, hospital-indexed, covariance, bootstrap, and historical dependencies. Public aggregate verification does not establish complete raw-to-result clinical replay. No clinical analysis, new simulation, model refitting, prediction, or covariance estimation was run to prepare this release.
 
 ## Public release
 
-Current release: **v1.3.0-manuscript-aligned**. Stable archive: [Zenodo concept DOI 10.5281/zenodo.22822481](https://doi.org/10.5281/zenodo.22822481). The exact version DOI is recorded with the immutable GitHub release after archive publication.
+Current release candidate: **v1.4.0-r2-public-sync**. Stable archive series: [Zenodo concept DOI 10.5281/zenodo.22822481](https://doi.org/10.5281/zenodo.22822481). The exact version DOI is recorded in the immutable GitHub release after archive publication. Historical v1.3.0 artifacts remain unchanged.
 
 ## Citation
 

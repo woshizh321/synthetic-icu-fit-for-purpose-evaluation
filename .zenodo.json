@@ -10,9 +10,9 @@
     "id": "cc-by-4.0"
   },
   "access_right": "open",
-  "title": "Reproducibility materials for “Decision consequences of evaluating synthetic clinical-data suitability across stochastic realizations and hospitals”",
-  "version": "1.3.0",
-  "description": "Public analysis software, approved aggregate source data, final manuscript displays, display-reproduction scripts and fabricated tests for synthetic clinical-data suitability across stochastic realizations and hospitals. No patient-level clinical or evaluated synthetic data, fitted clinical models, restricted hospital-level derivatives or private resampling assets are distributed. Full clinical source reconstruction requires independently authorized database access and additional restricted dependencies.",
+  "title": "Reproducibility materials for “Evaluating synthetic clinical data for future realizations and hospitals”",
+  "version": "1.4.0",
+  "description": "Public analysis software, approved aggregate source data, minimal simulated replicate-level E3/E5 reproduction inputs, final R2 manuscript displays, Supplementary Data 1–10, display-reproduction scripts and fabricated tests. No patient-level clinical or evaluated synthetic data, patient predictions, fitted clinical models, hospital identifiers, restricted hospital-indexed derivatives, private covariance assets or resampling indices are distributed. Full E1 clinical-source reconstruction requires independently authorized database access and restricted dependencies.",
   "keywords": [
     "synthetic clinical data",
     "synthetic health data",

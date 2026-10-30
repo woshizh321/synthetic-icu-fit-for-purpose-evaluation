@@ -1,0 +1,30 @@
+{
+  "release_scope": "simulated replicate-level strategy metrics only",
+  "contains_patient_level_data": false,
+  "contains_hospital_identifiers": false,
+  "contains_restricted_clinical_rows": false,
+  "source_authority_sha256": "966eb4f35d22d77905bc13c0d3f8cbbed22cb2eab9c88f735eeeb55f9a5fa80e",
+  "output_sha256": "50b69c5b0d308b367f388508587cf6e6a927087342640e15dd74e2e8f214febd",
+  "rows": 1152000,
+  "columns": [
+    "dgp",
+    "template_id",
+    "generator",
+    "learner",
+    "regime",
+    "replicate",
+    "strategy",
+    "fit_status",
+    "delta",
+    "estimated_probability",
+    "oracle_probability",
+    "estimated_state",
+    "oracle_state",
+    "decision_error",
+    "estimated_definitive",
+    "correct_definitive",
+    "false_qualification"
+  ],
+  "filter": "policy=P95 and confidence=0.95",
+  "scientific_transform": "column projection and row filter only; no estimation"
+}
