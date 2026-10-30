@@ -18,6 +18,7 @@ jobs:
         with:
           python-version: '3.14'
       - run: python -m pip install -r requirements-test.txt
+      - run: python -m pip install -r requirements-analysis.txt
       - run: python -m pytest -q tests
       - run: python reproduction/verify_public_release.py
       - run: python extension/e1/verify_released_e1.py
